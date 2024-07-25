@@ -572,205 +572,54 @@ section .cont .skcard .content .sk .name {
   text-align: center;
 }
 
-/* Why Join */
+/* elegible */
 
-#why-join {
+#participate {
   padding-top: 70px;
   padding-bottom: 30px;
-  background-image: url("../img/bg1.webp");
+  background-image: url("../img/bg.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-#why-join .overlay {
-  background-color: #4659;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+#participate .overlay {
+  background-color: #4465;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
-#why-join .cont h2 {
+#participate .cont h2 {
+  color: var(--white-color);
+}
+#participate .cont .content .left p, #participate .cont .content .left ul li, #participate .cont .content .left ul li b{
   color: var(--white-color);
 }
 
-#why-join .cont .content {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
-  gap: 20px;
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: var(--cont-width);
-  height: 100%;
+#elegible {
+  padding-top: 70px;
+  padding-bottom: 30px;
+  background-color: var(--dark-color);
+}
+#elegible .cont h2 {
+  color: var(--white-color);
+}
+#elegible .cont .content .left p, #elegible .cont .content .left ul li{
+  color: var(--white-color);
 }
 
-#why-join .cont .content .whyjoincard {
-  width: calc(100% / 3 - 40px / 3);
-  background: var(--bg-gradient);
-  /* border: 1px solid var(--white-color); */
-  /* background-color: #01704b66; */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: var(--border-radius-30);
-  box-shadow: var(--box-shadow);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  min-height: 300px;
-}
 
-#why-join .cont .content .whyjoincard .icon {
-  width: 100px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  background-color: var(--primary-color);
-}
-
-#why-join .cont .content .whyjoincard .icon svg {
-  width: 50px;
-  height: 50px;
-  fill: var(--white-color);
-}
-
-#why-join .cont .content .whyjoincard .details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-#why-join .cont .content .whyjoincard .details h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--dark-color);
-  text-align: center;
-}
-
-#why-join .cont .content .whyjoincard .details p {
-  font-size: 13px;
-  font-weight: 300;
-  color: var(--primary-color);
-  text-align: center;
-}
 
 /* Speakers */
 
-#speakers {
+#rules {
   padding-top: 70px;
-  background: var(--bg-gradient);
+  background: linear-gradient(180deg, var(--bg-color) 0%, #eaeaff 100%);;
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
   padding-bottom: 50px;
-}
-
-#speakers .cont .content {
-  flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
-  gap: 20px;
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: var(--cont-width);
-  height: 100%;
-}
-
-#speakers .cont .content .speaker {
-  position: relative;
-  width: calc(100% / 3 - 40px / 3);
-  background: var(--bg-gradient);
-  border-radius: var(--border-radius-30);
-  box-shadow: var(--box-shadow);
-  padding: 20px;
-  padding-top: 110px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 120px;
-}
-
-#speakers .cont .content .speaker .image {
-  position: absolute;
-  top: -100px;
-  width: 200px;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  overflow: hidden;
-  background: var(--bg-color);
-  border: 5px solid var(--primary-color);
-  padding: 5px;
-  object-fit: cover;
-}
-
-
-#speakers .cont .content .speaker .image img {
-  width: 100%;
-  height: 100%;
-  transition: var(--transition);
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-#speakers .cont .content .speaker .image img:hover {
-  transform: scale(1.05);
-}
-
-#speakers .cont .content .speaker .details {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-}
-
-#speakers .cont .content .speaker .details h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--primary-color);
-  text-align: center;
-  width: 100%;
-}
-
-#speakers .cont .content .speaker .details p {
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--dark-color);
-  text-align: center;
-  width: 100%;
-  padding-bottom: 5px;
-}
-
-#speakers .cont .content .speaker .details span {
-  position: relative;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--dark-color);
-  text-align: center;
-  width: 100%;
-  padding-top: 10px;
-}
-
-#speakers .cont .content .speaker .details span::before {
-  content: "";
-  position: absolute;
-  left: calc(50% - 75px);
-  top: 1px;
-  width: 150px;
-  height: 1px;
-  border-radius: 1px;
-  background: var(--primary-color);
 }
 
 /* Shedules */
