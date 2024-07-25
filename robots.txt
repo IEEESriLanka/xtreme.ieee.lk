@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: https://educationweek.ieee.lk/sitemap.xml
+Sitemap: https://xtreme.ieee.lk/sitemap.xml
