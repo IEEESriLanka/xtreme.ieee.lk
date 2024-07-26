@@ -1092,7 +1092,9 @@ footer .cont .content .left p {
     text-align: center;
     width: 100%;
   }
-  
+  #home .cont .content h2{
+    text-align: center;
+  }
   #home .cont .content p {
     font-size: 16px;
     text-align: center;
@@ -1131,7 +1133,7 @@ footer .cont .content .left p {
     width: 100%;
   }
   
-  #about .cont .content .right .about-logo {
+  #about .cont .content .right .about-logo, .two-row .cont .content .right .about-logo {
     padding-bottom: 20px;
   }
   #about .cont .content .right .about-logo img {
