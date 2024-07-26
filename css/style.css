@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
-  --primary-color: #040e4f;
-  --secondary-color: #12f1ff;
+  --primary-color: #12679B;
+  /* --primary-color: #040e4f; */
+  --secondary-color: #F68C3F;
+  /* --secondary-color: #12f1ff; */
   --tertiary-color: #020829;
   --white-color: #fff;
   --black-color: #000;
@@ -24,7 +26,8 @@
   --bg-color: #f8f8ff;
 
   --border-color: #c6cbd2;
-  --bg-gradient: linear-gradient(180deg, #e8f3ff 0%, #eaeaff 100%);
+  --bg-gradient: linear-gradient(180deg, #fff3eb 0%, #e9f7ff 100%);
+  --bg-gradient0: linear-gradient(0deg, #fff3eb 0%, #e9f7ff 100%);
 
   --transition: all 0.3s linear;
   --transition-slow-1: all 1s linear;
@@ -253,7 +256,7 @@ section .cont h2::before {
   transform: translateY(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(270deg, #d0d0ff 8.01%, var(--primary-color) 100%);
+  background: linear-gradient(270deg, #ffe5d2 8.01%, var(--primary-color) 100%);
 }
 
 section .overlay {
@@ -276,7 +279,7 @@ section .overlay {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: var(--bg-gradient);
+  background: var(--bg-gradient0);
   padding: 30px;
   border-radius: var(--border-radius-30);
   box-shadow: var(--box-shadow);
@@ -346,9 +349,9 @@ section .overlay {
   font-weight: 600;
 }
 
-#home .cont .content a {
+#home .cont .content a, #guide .cont .content .left a {
   padding: 10px 20px;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   color: var(--white-color);
   font-size: 18px;
   font-weight: 500;
@@ -359,7 +362,10 @@ section .overlay {
 #home .cont .content a:hover {
   background-color: var(--dark-color);
 }
-
+#guide .cont .content .left a:hover {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
 #home .cont .image {
   width: 50%;
   display: flex;
@@ -615,12 +621,31 @@ section .cont .skcard .content .sk .name {
 
 #rules {
   padding-top: 70px;
-  background: linear-gradient(180deg, var(--bg-color) 0%, #eaeaff 100%);;
+  background: linear-gradient(180deg, var(--bg-color) 0%, #eaeaff 100%);
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
   padding-bottom: 50px;
 }
+#guide {
+  padding-top: 70px;
+  background: #331d0d;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 50px;
+}
+#guide .cont h2 {
+  color: var(--white-color);
+}
+
+#guide .cont .content .left p, #guide .cont .content .left ul li{
+  color: var(--white-color);
+}
+
+
+
+
 
 /* Shedules */
 
@@ -1245,6 +1270,52 @@ footer .cont .content .right p{
   font-weight: 500;
   border-radius: var(--border-radius-30);
   transition: var(--transition);
+}
+
+#connected .cont .content .left {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: space-between;
+  width: 100%;
+}
+#connected .cont .content .left .row{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 350px;
+  min-width: 325px;
+  max-width: calc(50% - 10px);
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+#connected .cont .content .left .row:hover{
+  transform: translateY(-5px);
+}
+#connected .cont .content .left .row .icon{
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#connected .cont .content .left .row .icon svg{
+  width: 30px;
+  height: 30px;
+  fill: var(--white-color);
+}
+#connected .cont .content .left .row .text{
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--white-color);
+  
 }
 
 @media screen and (max-width: 768px) {
