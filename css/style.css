@@ -246,6 +246,7 @@ section .cont h2 {
   font-style: normal;
   font-weight: 600;
   line-height: 100%;
+  text-transform: uppercase;
 }
 section .cont h2::before {
   content: "";
@@ -306,7 +307,8 @@ section .overlay {
   margin: 0;
   padding: 0;
   text-align: left;
-  font-size: 25px;
+  font-size: 22px;
+  text-transform: none;
 }
 #home .cont .content h2::before{
   display: none;
