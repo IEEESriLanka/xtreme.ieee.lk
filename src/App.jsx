@@ -19,46 +19,17 @@ function App() {
   const [activeSection, setActiveSection] = useState("home");
   const [forceRefresh, setForceRefresh] = useState(0);
 
-  // Add smooth momentum scrolling like mobile
   useEffect(() => {
-    let isScrolling = false;
-    let scrollVelocity = 0;
-    let animationId = null;
-
-    const smoothScroll = (e) => {
-      e.preventDefault();
-      
-      const delta = e.deltaY;
-      const scrollAmount = delta * 0.2; 
-      
-      scrollVelocity += scrollAmount;
-      
-      if (!isScrolling) {
-        isScrolling = true;
-        
-        const scroll = () => {
-          if (Math.abs(scrollVelocity) > 0.1) {
-            window.scrollBy(0, scrollVelocity);
-            scrollVelocity *= 0.85; // Friction/deceleration factor
-            animationId = requestAnimationFrame(scroll);
-          } else {
-            isScrolling = false;
-            scrollVelocity = 0;
-          }
-        };
-        
-        scroll();
-      }
-    };
-
-    // Add wheel event listener with passive: false to allow preventDefault
-    document.addEventListener('wheel', smoothScroll, { passive: false });
-
-    // Add smooth scrolling styles and custom blue gradient scrollbar
     const style = document.createElement('style');
     style.textContent = `
       html {
         scroll-behavior: smooth;
+      }
+      
+      /* Ensure body can scroll normally as fallback */
+      body {
+        overflow-x: hidden;
+        overflow-y: auto;
       }
       
       /* Custom Blue Gradient Scrollbar */
@@ -98,15 +69,16 @@ function App() {
       ::-webkit-scrollbar:horizontal {
         height: 12px;
       }
+      
+      /* Ensure compatibility across browsers */
+      * {
+        box-sizing: border-box;
+      }
     `;
     document.head.appendChild(style);
 
     // Cleanup function
     return () => {
-      document.removeEventListener('wheel', smoothScroll);
-      if (animationId) {
-        cancelAnimationFrame(animationId);
-      }
       if (style.parentNode) {
         document.head.removeChild(style);
       }
@@ -119,7 +91,6 @@ function App() {
 
   const handleBackToMain = () => {
     setSelectedEvent(null);
-
     setForceRefresh((prev) => prev + 1);
 
     setTimeout(() => {
@@ -131,7 +102,6 @@ function App() {
   };
 
   const handleLogoClick = () => {
-    // Scroll to home or handle logo click
     const homeElement = document.getElementById("home");
     if (homeElement) {
       homeElement.scrollIntoView({ behavior: "smooth" });
@@ -142,14 +112,14 @@ function App() {
 
   const handleNavClick = () => {
     setSelectedEvent(null); 
-
     setForceRefresh((prev) => prev + 1);
   };
 
   const handleFooterNavClick = (sectionId) => {
     setSelectedEvent(null); 
-    setActiveSection(sectionId); 
+    setActiveSection(sectionId); // Update active section
 
+    // Force refresh for proper navigation
     setForceRefresh((prev) => prev + 1);
 
     // Scroll to the section
