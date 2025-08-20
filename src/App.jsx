@@ -13,6 +13,7 @@ import { StickyNavigation } from "./components/StickyNavigation";
 import PastWinners from "./components/PastWinners";
 import Calendar from "./components/Calendar";
 import registration from "./assets/Events/Registration";
+import Lenis  from "lenis";
 
 function App() {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -20,6 +21,14 @@ function App() {
   const [forceRefresh, setForceRefresh] = useState(0);
 
   useEffect(() => {
+
+    const lenis = new Lenis();
+    function raf(time){
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+    
     const style = document.createElement('style');
     style.textContent = `
       html {
@@ -79,6 +88,7 @@ function App() {
 
     // Cleanup function
     return () => {
+      lenis.destroy();
       if (style.parentNode) {
         document.head.removeChild(style);
       }
