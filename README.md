@@ -1,1 +1,1 @@
-DEV version of the IEEEXtreme sri lanka section
+IEEEXtreme Sri lanka section Site
