@@ -1,5 +1,1 @@
-# IEEEXtreme Sri Lanka website
-
-## https://xtreme.ieee.lk
-
-### Designed by Sahan Kaushalya
+DEV version of the IEEEXtreme sri lanka section
