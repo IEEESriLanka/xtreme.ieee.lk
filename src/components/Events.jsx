@@ -1,15 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
-import registration from '../assets/Events/Registration';
-import CodeX from '../assets/Events/CodeX';
+import React, { useState, useEffect, useRef } from "react";
+import events from "../constants/Events";
 
 const Events = ({ onEventSelect }) => {
   const [visibleSections, setVisibleSections] = useState({
     header: false,
-    events: false
+    events: false,
   });
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilter, setActiveFilter] = useState("all");
   const [hoveredCard, setHoveredCard] = useState(null);
-  
+
   const headerRef = useRef(null);
   const eventsRef = useRef(null);
 
@@ -17,14 +16,14 @@ const Events = ({ onEventSelect }) => {
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      rootMargin: "0px 0px -50px 0px",
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const sectionId = entry.target.getAttribute('data-section');
-          setVisibleSections(prev => ({ ...prev, [sectionId]: true }));
+          const sectionId = entry.target.getAttribute("data-section");
+          setVisibleSections((prev) => ({ ...prev, [sectionId]: true }));
         }
       });
     }, observerOptions);
@@ -35,110 +34,36 @@ const Events = ({ onEventSelect }) => {
     return () => observer.disconnect();
   }, []);
 
-  const events = [
-      {
-    id: 2,
-    type: 'post',
-    title: 'CodeX Session Series',
-    description: 
-  `𝗪𝗼𝗻𝗱𝗲𝗿𝗶𝗻𝗴 𝘄𝗵𝗮𝘁’𝘀 𝗮𝗵𝗲𝗮𝗱? 🧭
 
-Here’s your complete roadmap to mastering the world of competitive programming with CodeX! 📍
-
-From algorithms to advanced strategies, each week is carefully designed to sharpen your skills, challenge your thinking, and prepare you for the real battles ahead.
-
-And yes, you’ll have TWO sessions every week to double the impact. 💥
-
-Take a look. Lock in your journey. Let’s code our way to victory! 🚀
-    `,
-    buttontext:'Register Now',
-    buttonlink:'https://lu.ma/owts25tf',
-    date: 'ongoing',
-    time: 'ongoing',
-    location: 'Virtual',
-    status: 'ongoing',
-    image: CodeX.image1,
-    registrations: 100,
-    hashtags:['IEEE ','IEEESL ','CODEX','IEEEXtreme19' ,'ICPC2026'],
-    maxCapacity: '',
-    tags: ['Competitive Programming','Algorithms'],
-    timeline: []
-  },
-  {
-    id: 1,
-    type: 'post',
-    title: ' IEEEXtreme 19.0 is here!',
-    description: 
-  `🌐 The Ultimate 24-Hour Global Coding Challenge
-
-    📅 Date: 25 October 2025
-    🕛 Starts at: 00:00 UTC (GMT+5:30)
-
-    ⚡ Are you ready to code without limits?
-
-    Team up. Compete. Conquer. From anywhere in the world.
-
-    ✅ Open to all IEEE student members
-    👨‍💻 Solve real-world challenges
-    🏆 Compete globally and win exciting prizes
-
-    🎯 Registrations are NOW OPEN!
-
-    📢 Don’t miss your chance to be part of history.
-
-    `,
-    buttontext:'Register Now',
-    buttonlink:'https://xtreme.vtools.ieee.org/',
-    date: '2025-10-25',
-    time: '00:00 UTC',
-    location: 'Virtual Global Event',
-    status: 'upcoming',
-    image: registration.image1,
-    registrations: 156,
-    hashtags:['IEEEXtreme19 ','CodeTheXtreme ','GlobalHackathon','IEEEStudents' ,'RegisterNow' ,'24HourCodingChallenge'],
-    maxCapacity: '',
-    tags: ['Problem Solving', 'Competitive Programming', 'Global'],
-    timeline: [
-      {
-        time: '00:00 UTC',
-        title: 'Competition Starts',
-        desc: 'Teams begin working on programming challenges worldwide'
-      },
-      {
-        time: '06:00 UTC',
-        title: 'First Checkpoint',
-        desc: 'Leaderboard updates and progress assessment'
-      },
-      {
-        time: '12:00 UTC',
-        title: 'Midpoint Review',
-        desc: 'Halfway through the competition - time for strategy adjustments'
-      },
-      {
-        time: '18:00 UTC',
-        title: 'Final Sprint',
-        desc: 'Last 6 hours - teams push for final solutions'
-      },
-      {
-        time: '23:59 UTC',
-        title: 'Competition Ends',
-        desc: 'Submission deadline and final leaderboard calculations'
-      }
-    ]
-  },
-
-];
 
   const filters = [
-    { id: 'all', label: 'All Events', count: events.length },
-    { id: 'workshop', label: 'Workshops', count: events.filter(e => e.type === 'workshop').length },
-    { id: 'update', label: 'Updates', count: events.filter(e => e.type === 'update').length },
-    { id: 'post', label: 'Posts', count: events.filter(e => e.type === 'post').length }
+    { id: "all", label: "All Events", count: events.length },
+    {
+      id: "workshop",
+      label: "Workshops",
+      count: events.filter((e) => e.type === "workshop").length,
+    },
+    {
+      id: "update",
+      label: "Updates",
+      count: events.filter((e) => e.type === "update").length,
+    },
+    {
+      id: "post",
+      label: "Posts",
+      count: events.filter((e) => e.type === "post").length,
+    },
+    // {
+    //   id: "sb-event",
+    //   label: "SB Events",
+    //   count: events.filter((e) => e.type === "sb-event").length,
+    // }, // ✅ New category
   ];
 
-  const filteredEvents = activeFilter === 'all' 
-    ? events 
-    : events.filter(event => event.type === activeFilter);
+  const filteredEvents =
+    activeFilter === "all"
+      ? events
+      : events.filter((event) => event.type === activeFilter);
 
   const handleEventClick = (event) => {
     if (onEventSelect) {
@@ -147,33 +72,68 @@ Take a look. Lock in your journey. Let’s code our way to victory! 🚀
   };
 
   const getStatusColor = (status) => {
-  switch(status) {
-    case 'upcoming': return 'bg-blue-100 text-blue-800 border-blue-200';
-    case 'active': return 'bg-green-100 text-green-800 border-green-200';
-    case 'ongoing': return 'bg-orange-100 text-orange-800 border-orange-200';
-    case 'published': return 'bg-purple-100 text-purple-800 border-purple-200';
-    default: return 'bg-gray-100 text-gray-800 border-gray-200';
-  }
-};
+    switch (status) {
+      case "upcoming":
+        return "bg-blue-100 text-blue-800 border-blue-200";
+      case "active":
+        return "bg-green-100 text-green-800 border-green-200";
+      case "ongoing":
+        return "bg-orange-100 text-orange-800 border-orange-200";
+      case "published":
+        return "bg-purple-100 text-purple-800 border-purple-200";
+      default:
+        return "bg-gray-100 text-gray-800 border-gray-200";
+    }
+  };
 
   const getTypeIcon = (type) => {
-    switch(type) {
-      case 'workshop':
+    switch (type) {
+      case "workshop":
         return (
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+            />
           </svg>
         );
-      case 'update':
+      case "update":
         return (
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-5 5-5-5h5v-5a7.5 7.5 0 00-15 0v5h5l-5 5-5-5h5V7a12 12 0 0124 0v10z" />
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 17h5l-5 5-5-5h5v-5a7.5 7.5 0 00-15 0v5h5l-5 5-5-5h5V7a12 12 0 0124 0v10z"
+            />
           </svg>
         );
-      case 'post':
+      case "post":
         return (
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+            />
           </svg>
         );
       default:
@@ -183,10 +143,10 @@ Take a look. Lock in your journey. Let’s code our way to victory! 🚀
 
   const formatDate = (dateStr) => {
     const date = new Date(dateStr);
-    return date.toLocaleDateString('en-US', { 
-      month: 'short', 
-      day: 'numeric',
-      year: 'numeric'
+    return date.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
     });
   };
 
@@ -392,7 +352,6 @@ Take a look. Lock in your journey. Let’s code our way to victory! 🚀
                 {!event.image && (
                   <div className="absolute bottom-4 left-4 text-white drop-shadow-lg">
                     {isNaN(new Date(event.date).getTime()) ? (
-                     
                       <div className="text-2xl font-bold">{event.date}</div>
                     ) : (
                       // If it's a valid date, show formatted parts
@@ -443,7 +402,9 @@ Take a look. Lock in your journey. Let’s code our way to victory! 🚀
                         d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                       />
                     </svg>
-                    {!isNaN(new Date(event.date).getTime()) ? formatDate(event.date) : event.date}
+                    {!isNaN(new Date(event.date).getTime())
+                      ? formatDate(event.date)
+                      : event.date}
                   </div>
                 )}
 
@@ -458,28 +419,33 @@ Take a look. Lock in your journey. Let’s code our way to victory! 🚀
                 {/* Event Details */}
                 <div className="space-y-1.5 mb-4">
                   {event.time && (
-  <div className="flex items-center gap-2 text-sm text-gray-500">
-    <svg
-      className="w-4 h-4"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-      />
-    </svg>
+                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
 
-    {(() => {
-      // Try parsing as a Date with today's date + time
-      const testDate = new Date(`1970-01-01T${event.time}`);
-      return isNaN(testDate.getTime()) ? event.time : testDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-    })()}
-  </div>
-)}
+                      {(() => {
+                        // Try parsing as a Date with today's date + time
+                        const testDate = new Date(`1970-01-01T${event.time}`);
+                        return isNaN(testDate.getTime())
+                          ? event.time
+                          : testDate.toLocaleTimeString([], {
+                              hour: "2-digit",
+                              minute: "2-digit",
+                            });
+                      })()}
+                    </div>
+                  )}
 
                   <div className="flex items-center gap-2 text-sm text-gray-500">
                     <svg

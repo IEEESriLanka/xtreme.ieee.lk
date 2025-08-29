@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import headshots from '../assets/headshots';
 import sriLanka from '../assets/images/sri-lanka.png'
+import placeholderImage from '../assets/images/placeholder.jpg'
 
 const Committee = () => {
   const [visibleSections, setVisibleSections] = useState({
@@ -9,10 +10,24 @@ const Committee = () => {
     ambassadors: false
   });
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [imageErrors, setImageErrors] = useState({});
   
   const headerRef = useRef(null);
   const leadsRef = useRef(null);
   const ambassadorsRef = useRef(null);
+
+  // Handle image error
+  const handleImageError = (id, type) => {
+    setImageErrors(prev => ({ ...prev, [`${type}-${id}`]: true }));
+  };
+
+  // Get image source with fallback
+  const getImageSrc = (image, id, type) => {
+    if (!image || imageErrors[`${type}-${id}`]) {
+      return placeholderImage;
+    }
+    return image;
+  };
 
   // Intersection Observer for scroll animations
   useEffect(() => {
@@ -284,9 +299,10 @@ const Committee = () => {
                 <div className="mb-8 relative z-10">
                   <div className="relative inline-block">
                     <img
-                      src={lead.image}
+                      src={getImageSrc(lead.image, lead.id, 'lead')}
                       alt={lead.name}
                       className="w-48 h-48 mx-auto rounded-full object-cover border-6 border-blue-100 shadow-lg group-hover:border-blue-200 group-hover:shadow-xl transition-all duration-500 group-hover:scale-105"
+                      onError={() => handleImageError(lead.id, 'lead')}
                     />
                     
                     {/* Profile ring animation */}
@@ -411,9 +427,10 @@ const Committee = () => {
                 <div className="mb-6 relative z-10">
                   <div className="relative inline-block">
                     <img
-                      src={ambassador.image}
+                      src={getImageSrc(ambassador.image, ambassador.id, 'ambassador')}
                       alt={ambassador.name}
                       className="w-32 h-32 mx-auto rounded-full object-cover border-4 border-blue-200 shadow-lg group-hover:border-blue-300 group-hover:shadow-xl transition-all duration-500 group-hover:scale-110"
+                      onError={() => handleImageError(ambassador.id, 'ambassador')}
                     />
                     
                     {/* Profile glow */}

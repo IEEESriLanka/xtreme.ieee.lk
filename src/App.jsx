@@ -13,7 +13,8 @@ import { StickyNavigation } from "./components/StickyNavigation";
 import PastWinners from "./components/PastWinners";
 import Calendar from "./components/Calendar";
 import registration from "./assets/Events/Registration";
-import Lenis  from "lenis";
+import Lenis from "lenis";
+import SBEvents from "./components/SbEvents";
 
 function App() {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -21,15 +22,14 @@ function App() {
   const [forceRefresh, setForceRefresh] = useState(0);
 
   useEffect(() => {
-
     const lenis = new Lenis();
-    function raf(time){
+    function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
-    
-    const style = document.createElement('style');
+
+    const style = document.createElement("style");
     style.textContent = `
       html {
         scroll-behavior: smooth;
@@ -108,7 +108,7 @@ function App() {
       if (eventsElement) {
         eventsElement.scrollIntoView({ behavior: "smooth" });
       }
-    }, 100); 
+    }, 100);
   };
 
   const handleLogoClick = () => {
@@ -116,17 +116,17 @@ function App() {
     if (homeElement) {
       homeElement.scrollIntoView({ behavior: "smooth" });
     }
-    setSelectedEvent(null); 
+    setSelectedEvent(null);
     setActiveSection("home");
   };
 
   const handleNavClick = () => {
-    setSelectedEvent(null); 
+    setSelectedEvent(null);
     setForceRefresh((prev) => prev + 1);
   };
 
   const handleFooterNavClick = (sectionId) => {
-    setSelectedEvent(null); 
+    setSelectedEvent(null);
     setActiveSection(sectionId); // Update active section
 
     // Force refresh for proper navigation
@@ -147,70 +147,6 @@ function App() {
     }, 100);
   };
 
-  const events = [
-  {
-    id: 1,
-    type: 'post',
-    title: ' IEEEXtreme 19.0 is here!',
-    description: 
-  `🌐 The Ultimate 24-Hour Global Coding Challenge
-
-    📅 Date: 25 October 2025
-    🕛 Starts at: 00:00 UTC (GMT+5:30)
-
-    ⚡ Are you ready to code without limits?
-
-    Team up. Compete. Conquer. From anywhere in the world.
-
-    ✅ Open to all IEEE student members
-    👨‍💻 Solve real-world challenges
-    🏆 Compete globally and win exciting prizes
-
-    🎯 Registrations are NOW OPEN!
-
-    📢 Don't miss your chance to be part of history.
-
-    `,
-    buttontext:'Register Now',
-    buttonlink:'https://xtreme.vtools.ieee.org/',
-    date: '2025-10-25',
-    time: '00:00 UTC',
-    location: 'Virtual Global Event',
-    status: 'upcoming',
-    image: registration.image1,
-    registrations: 156,
-    hashtags:['IEEEXtreme19 ','CodeTheXtreme ','GlobalHackathon','IEEEStudents' ,'RegisterNow' ,'24HourCodingChallenge'],
-    maxCapacity: '',
-    tags: ['Problem Solving', 'Competitive Programming', 'Global'],
-    timeline: [
-      {
-        time: '00:00 UTC',
-        title: 'Competition Starts',
-        desc: 'Teams begin working on programming challenges worldwide'
-      },
-      {
-        time: '06:00 UTC',
-        title: 'First Checkpoint',
-        desc: 'Leaderboard updates and progress assessment'
-      },
-      {
-        time: '12:00 UTC',
-        title: 'Midpoint Review',
-        desc: 'Halfway through the competition - time for strategy adjustments'
-      },
-      {
-        time: '18:00 UTC',
-        title: 'Final Sprint',
-        desc: 'Last 6 hours - teams push for final solutions'
-      },
-      {
-        time: '23:59 UTC',
-        title: 'Competition Ends',
-        desc: 'Submission deadline and final leaderboard calculations'
-      }
-    ]
-  },
-];
 
   return (
     <>
@@ -227,16 +163,16 @@ function App() {
       ) : (
         <>
           <HeroSection />
-          <About/>
+          <About />
           <Events onEventSelect={handleEventSelect} />
+          <SBEvents onEventSelect={handleEventSelect} /> {/* ✅ Student Branch Events */}
           {/* <Calendar events={events} /> */}
           {/*<PastWinners/>*/}
-          <Committee/>
+          <Committee />
           <RulesSection />
           <GuideSection />
           <ContactPage />
           <Footer onNavClick={handleFooterNavClick} />
-
         </>
       )}
     </>
