@@ -37,7 +37,7 @@ export const TopHeader = ({ onLogoClick }) => {
               {
                 icon: socialIcons.facebook,
                 alt: "Facebook",
-                href: "https://www.facebook.com/IEEEXtreme",
+                href: "https://www.facebook.com/share/1G1k19kH6C/",
                 delay: 100,
                 color: "from-blue-600 to-indigo-500",
               },

@@ -115,7 +115,7 @@ const Footer = ({ onNavClick }) => {
             </svg>
           </a>
           <a
-            href="https://www.facebook.com/IEEESriLanka"
+            href="https://www.facebook.com/share/1G1k19kH6C/"
             className="hover:text-gray-700 p-1"
           >
             <svg

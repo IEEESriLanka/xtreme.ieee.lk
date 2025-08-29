@@ -109,7 +109,7 @@ export const Navbar = ({ onNavClick }) => {
                 {
                   icon: socialIcons.facebook,
                   alt: "Facebook",
-                  href: "https://www.facebook.com/IEEESriLanka",
+                  href: "https://www.facebook.com/share/1G1k19kH6C/",
                   delay: 100,
                   color: "from-blue-600 to-indigo-500",
                 },

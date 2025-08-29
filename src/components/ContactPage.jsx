@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 // Social links with enhanced data
 const socialLinks = [
   {
-    href: "https://www.facebook.com/IEEEXtreme",
+    href: "https://www.facebook.com/share/1G1k19kH6C/",
     icon: "facebook",
     label: "Facebook",
     color: "from-blue-600 to-blue-800",
