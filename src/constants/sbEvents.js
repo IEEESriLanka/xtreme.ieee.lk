@@ -11,157 +11,64 @@ import NIBM_Codex from  "../assets/SB-Events/NIBM_Codex";
 // ongoing
 
 const sbEvents = [
-//     {
-//       id: 8,
-//       type: "sb-event",
-//       title: "Meet the Visionaries Steering J’puraXtreme 2.0!",
-//       description: `
-//       🔥 Meet the Visionaries Steering J’puraXtreme 2.0! 🔥
+{
+      id: 6,
+      type: "sb-event",
+      title: '🦇 The Signal is in the Sky… 🌃🦇',
+      description: `
+      
+The wait is almost over.
+Registrations for J’puraXtreme 2.0 are opening soon! ⚡
 
-//       The journey of a successful competitive programming event starts with an unstoppable team. Here are the Project Leads making it all happen:
+Sharpen your code, embrace the night, and get ready to rise above the challenge. 🌌
 
-//       💼 Project Leads:
+Organized by: Computer Society Chapter, IEEE Student Branch, University of Sri Jayewardenepura
 
-//       ● Chairperson: Ganindu Deshapriya
-//       ● Quiz Master: Sahan Perera
-//       ● Events Crew Head: Uththara Karunarathna
-//       ● Designing And Marketing Crew Head: Malanka Wickramasinghe
+Design and Caption By : Malanka Wickramasinghe
 
-//       These leaders ensure that every line of code, every challenge, and every participant experience is top-notch! 💻⚡
 
-//  `,
-//       buttontext: null,
-//       buttonlink: "#",
-//       date: "",
-//       time: "",
-//       location: "",
-//       status: "published",
-//       image: JpuraXtreme_OC.image1,
-//       registrations: null,
-//       hashtags: ["JapuraXtreme2_0","IEEE","USJ","IEEESB","IEEECS"],
-//       maxCapacity: null,
-//       tags: ["JapuraXtreme2_0 ", "Project Leads"],
-//       branch: "USJ",
-//       timeline: [],
-//     },
-//     {
-//       id: 7,
-//       type: "sb-event",
-//       title: "Brainpower in Action!",
-//       description: `
-//       🧠 Brainpower in Action! 🧠
+ `,
+      buttontext: null,
+      buttonlink: "#",
+      date: "",
+      time: "",
+      location: "",
+      status: "upcoming",
+      image: JpuraXtreme_OC.image6,
+      registrations: null,
+      hashtags: ["JapuraXtreme2_0","IEEE","USJ","IEEESB","CS"],
+      maxCapacity: null,
+      tags: ["𝐉’𝐩𝐮𝐫𝐚𝐗𝐭𝐫𝐞𝐦𝐞 𝟐.𝟎 ", "ProgrammingCompetition"],
+      branch: "USJ",
+      timeline: [],
+    },
+{
+      id: 5,
+      type: "sb-event",
+      title: '🦇 "ᴡʜᴇɴ ᴏᴛʜᴇʀs ꜱʟᴇᴇᴘ, ʟᴇɢᴇɴᴅs ᴄᴏᴅᴇ."🦇',
+      description: `
+      
+𝐉’𝐩𝐮𝐫𝐚𝐗𝐭𝐫𝐞𝐦𝐞 𝟐.𝟎 is back!  Bigger, bolder, and darker. 💻
 
-//         Our Quiz Team is ready to challenge, inspire, and test the limits of knowledge at J’puraXtreme 2.0. Here are the members bringing intellect to the forefront:
-
-//         📝 Quiz Team:
-
-//         ● Quiz Master: Sahan Perera
-
-//         Members:
-//         ● Akinda Gunarathne
-//         ● Nivash Sharma
-//         ● Dunith Abeyaratne
-
-//         From tricky algorithms to mind-bending logic, this team is your go-to for the ultimate brain battles! ⚡🖥
-
-//  `,
-//       buttontext: null,
-//       buttonlink: "#",
-//       date: "",
-//       time: "",
-//       location: "",
-//       status: "published",
-//       image: JpuraXtreme_OC.image2,
-//       registrations: null,
-//       hashtags: ["JapuraXtreme2_0","IEEE","USJ","IEEESB","IEEECS"],
-//       maxCapacity: null,
-//       tags: ["JapuraXtreme2_0 ", "Quiz Team"],
-//       branch: "USJ",
-//       timeline: [],
-//     },
-//     {
-//       id: 6,
-//       type: "sb-event",
-//       title: "Designs that Speak beyond Xtreme!",
-//       description: `
-//       🎨 Designs that Speak beyond Xtreme! 🎨
-
-//       The vibe of J’puraXtreme 2.0 comes alive through every poster, design, and campaign; all thanks to the Designing & Marketing Team . 
-//       This creative force is behind the look, feel, and reach of the event.
-
-//       ✨ Designing & Marketing Team:
-
-//       ● Team Lead: Malanka Tharula
-
-//       Members:
-//       ● Shehan Maduwantha
-//       ● Oshan Lakshika
-//       ● Pathum Sanjaya
-//       ● Hirusha Kariyawasam
-//       ● Malith Dilshan
-//       ● Vishmi Dewmini
-//       ● Faham Fahim
-//       ● Nethara Vidmantha
-//       ● Sandini Ruwanya
-//       ● Chamod Chandupa
-//       ● Chelaka Botheju
-
-//       Through bold designs and impactful promotions, this team ensures J’puraXtreme 2.0 shines bright on every platform! 🌟📢
-
-//  `,
-//       buttontext: null,
-//       buttonlink: "#",
-//       date: "",
-//       time: "",
-//       location: "",
-//       status: "published",
-//       image: JpuraXtreme_OC.image3,
-//       registrations: null,
-//       hashtags: ["JapuraXtreme2_0","IEEE","USJ","IEEESB","IEEECS"],
-//       maxCapacity: null,
-//       tags: ["JapuraXtreme2_0 ", " Designing & Marketing"],
-//       branch: "USJ",
-//       timeline: [],
-//     },
-//     {
-//       id: 5,
-//       type: "sb-event",
-//       title: "Meet the Events & Programming Team",
-//       description: `
-//       🎉 Coordinators of Success! 🎉
-
-//       Every great event runs smoothly thanks to a dedicated crew working tirelessly in the background. Meet the Events & Programming Team of J’puraXtreme 2.0, ensuring seamless coordination and perfect execution throughout the event:
-
-//       🛠 Events & Programming Team:
-
-//       ● Team Lead: Utthara Karunarathna
-
-//       Members:
-//       ● Shanki Tharusha
-//       ● Sadeepa Lakshan
-//       ● Tharsigan Gnanasekar
-//       ● Sharini Gunawardena
-//       ● Inuka Vimuth
-//       ● Thuvini Mahagamage
-//       ● Akshay Vijayakumar
-//       ● Wimansa Samudinee
-//       ● Raveesha Krishto
-
-//  `,
-//       buttontext: null,
-//       buttonlink: "#",
-//       date: "",
-//       time: "",
-//       location: "",
-//       status: "published",
-//       image: JpuraXtreme_OC.image1,
-//       registrations: null,
-//       hashtags: ["JapuraXtreme2_0","IEEE","USJ","IEEESB","IEEECS"],
-//       maxCapacity: null,
-//       tags: ["JapuraXtreme2_0 ", "Project Leads"],
-//       branch: "USJ",
-//       timeline: [],
-//     },
+24 Hours. 🕐
+Non-stop hacking. 👨‍💻
+Infinite challenges. 🔥
+Will you rise or fall in the shadows?
+ `,
+      buttontext: null,
+      buttonlink: "#",
+      date: "",
+      time: "",
+      location: "",
+      status: "upcoming",
+      image: JpuraXtreme_OC.image5,
+      registrations: null,
+      hashtags: ["JapuraXtreme2_0","IEEE","USJ","IEEESB","CS"],
+      maxCapacity: null,
+      tags: ["𝐉’𝐩𝐮𝐫𝐚𝐗𝐭𝐫𝐞𝐦𝐞 𝟐.𝟎 ", "ProgrammingCompetition"],
+      branch: "USJ",
+      timeline: [],
+    },
     {
       id: 4,
       type: "sb-event",
