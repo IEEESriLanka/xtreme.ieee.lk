@@ -201,6 +201,26 @@ END:VCALENDAR`;
                 </div>
               )}
 
+              {event.buttontext2 && event.buttonlink2 && (
+                <div className="mb-6">
+                  <a 
+                    href={event.buttonlink2}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white py-3 px-8 rounded-xl font-bold text-lg transition-all duration-500 hover:scale-110 hover:shadow-2xl shadow-lg animate-glow-pulse group"
+                    onMouseEnter={() => setIsHovering(true)}
+                    onMouseLeave={() => setIsHovering(false)}
+                  >
+                    <span className="flex items-center gap-2">
+                      {event.buttontext2}
+                      <svg className={`w-5 h-5 transition-transform duration-300 ${isHovering ? 'translate-x-2' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              )}
+
               {/* Event Hashtags */}
               {event.hashtags && event.hashtags.length > 0 && (
                 <div className="flex flex-wrap gap-2">

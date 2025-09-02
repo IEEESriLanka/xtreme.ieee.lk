@@ -1,10 +1,71 @@
   
 import registration from "../assets/Events/Registration";
 import CodeX from "../assets/Events/CodeX";
+import whatsapp from "../assets/Events/Whatsapp";
 
 
 
   const events = [
+    {
+      id: 4,
+      type: "post",
+      title: "Join Us On WhatsApp!",
+      description: `
+      🔰The official WhatsApp Q&A Group for 𝗜𝗘𝗘𝗘𝗫𝘁𝗿𝗲𝗺𝗲 𝗦𝗿𝗶 𝗟𝗮𝗻𝗸𝗮 𝗦𝗲𝗰𝘁𝗶𝗼𝗻 is now 𝗢𝗣𝗘𝗡!
+
+All your questions and concerns about the competition can be answered here!💬
+
+📍Join now and be part of the community.
+
+               or
+
+𝘚𝘤𝘢𝘯 𝘵𝘩𝘦 𝘘𝘙 𝘤𝘰𝘥𝘦 𝘵𝘰 𝘫𝘰𝘪𝘯.
+
+
+    `,
+      buttontext: "Join Now",
+      buttonlink: "https://chat.whatsapp.com/IOcTf27KyXUGTk0R0pvNYW",
+      date: "ongoing",
+      time: "ongoing",
+      location: "Virtual",
+      status: "ongoing",
+      image: whatsapp.image1,
+      registrations: null,
+      hashtags: ["IEEE ", "IEEESL ", "CODEX", "IEEEXtreme19"],
+      maxCapacity: "",
+      tags: [],
+      timeline: [],
+    },
+    {
+      id: 3,
+      type: "post",
+      title: "Get Your IEEE Student Membership Today",
+      description: `
+      Compete in IEEEXtreme for Just $7!
+
+      Get Your IEEE Student Membership Today
+      Join IEEE for only $7 and unlock your chance to participate in IEEEXtreme, the world’s biggest 24-hour programming competition.
+
+      🌍 Connect with tech enthusiasts worldwide
+      🏆 Compete for global rankings and prizes
+      📚 Access exclusive IEEE resources
+
+    `,
+      buttontext: "Sign Up Now",
+      buttonlink: "https://www.ieee.org/membership/join",
+      buttontext2: "Watch Tutorial",
+      buttonlink2: "https://www.youtube.com/watch?v=eVQFZ8b68Tg",
+      date: "ongoing",
+      time: "ongoing",
+      location: "Virtual",
+      status: "ongoing",
+      image: registration.image2,
+      registrations: null,
+      hashtags: ["IEEE ", "IEEESL ", "CODEX", "IEEEXtreme19"],
+      maxCapacity: "",
+      tags: [],
+      timeline: [],
+    },
     {
       id: 2,
       type: "post",

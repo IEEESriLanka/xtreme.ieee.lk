@@ -21,29 +21,29 @@ const SBEvents = ({ onEventSelect }) => {
   }, []);
 
   // List of 22 branches
-  const branches = [
-    "IIT",
+const branches = [
     "KDU",
-    "NIBM",
+    "SLIIT",
+    "USJ",
+    "CINEC",
+    "UOK",
     "NSBM",
+    "NIBM",
+    "IIT",
     "OUSL",
     "RUSL",
     "WUSL",
     "SESUL",
-    "SLIIT",
     "SLTC",
     "SUSL",
     "UCSC",
     "UOJ",
-    "UOK",
     "UOM",
     "UOP",
     "UOR",
     "UOV",
     "UOVT",
-    "USJ",
     "UWU",
-    "CINEC",
   ];
 
   // Sample events with branch - updated to match Events component structure

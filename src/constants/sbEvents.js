@@ -4,6 +4,7 @@ import JpuraXtreme_OC from "../assets/SB-Events/JpuraXtreme_OC";
 import GreenXtreme_CD from  "../assets/SB-Events/GreenXtreme_CD";
 import GreenXtreme_WS from  "../assets/SB-Events/GreenXtreme_WS";
 import NIBM_Codex from  "../assets/SB-Events/NIBM_Codex";
+import CINEC_RoadToXtreme from "../assets/SB-Events/CINEC_RoadToXtreme";
 
 // published
 // upcoming
@@ -11,6 +12,34 @@ import NIBM_Codex from  "../assets/SB-Events/NIBM_Codex";
 // ongoing
 
 const sbEvents = [
+  {
+      id: 7,
+      type: "sb-event",
+      title: 'Every great coder starts with a single step!',
+      description: `
+      
+Your journey to greatness begins with one step. Take yours on the ROAD TO XTREME and unlock your potential in coding, creativity, and innovation! 🚀💻
+
+Organized by: IEEE Student Branch of CINEC Campus
+Design: Seniru Ekanayaka
+Caption By : Sonali Manjula
+
+
+ `,
+      buttontext: null,
+      buttonlink: "#",
+      date: "",
+      time: "",
+      location: "",
+      status: "upcoming",
+      image: CINEC_RoadToXtreme.image1,
+      registrations: null,
+      hashtags: ["RoadToXtreme_1.0","IEEEXtreme_19.0","CINECIEEE","IEEESB"],
+      maxCapacity: null,
+      tags: ["RoadToXtreme_1.0", "ProgrammingCompetition"],
+      branch: "CINEC",
+      timeline: [],
+    },
 {
       id: 6,
       type: "sb-event",
