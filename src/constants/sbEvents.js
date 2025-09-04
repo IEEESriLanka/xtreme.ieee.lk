@@ -20,17 +20,13 @@ title: '🦇 𝗖𝗮𝗹𝗹𝗶𝗻𝗴 𝗔𝗹𝗹 𝗛𝗲𝗿𝗼𝗲𝘀!
       
 🌃 The sky is lit with the signal. Competitors, it’s your time to rise. The registrations for J'puraXtreme 2.0 are officially open now!
 
-🔗Register now: japuraXtreme.online
 
 Prepare to face the ultimate coding showdown and prove your skills! 🔥
 
-Organized by: Computer Society Chapter, IEEE Student Branch, University of Sri Jayewardenepura
-
-Design and Caption By : Malanka Wickramasinghe
 
  `,
-      buttontext: null,
-      buttonlink: "#",
+      buttontext: "Register now",
+      buttonlink: "https://www.japuraxtreme.online/",
       date: "",
       time: "",
       location: "",
@@ -53,16 +49,12 @@ The wait is over! the shadows have cleared, and the official 𝐉’𝐏𝐔𝐑
 
 Uncover every detail: challenges, registration, and how you can step into the spotlight of the most electrifying hackathon.
 
-⚡𝙑𝙞𝙨𝙞𝙩 𝙪𝙨: www.japuraxtreme.online
-
 The city will soon call its heroes. Are you ready to rise from the dark? 💥
 
-Design by: Oshan lakshika
-Caption by: Nethara Vidmantha
 
  `,
-      buttontext: null,
-      buttonlink: "#",
+      buttontext: "𝙑𝙞𝙨𝙞𝙩 𝙪𝙨",
+      buttonlink: "www.japuraxtreme.online",
       date: "",
       time: "",
       location: "",
