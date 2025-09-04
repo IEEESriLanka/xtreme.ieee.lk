@@ -12,6 +12,69 @@ import CINEC_RoadToXtreme from "../assets/SB-Events/CINEC_RoadToXtreme";
 // ongoing
 
 const sbEvents = [
+    {
+      id: 9,
+      type: "sb-event",
+title: '🦇 𝗖𝗮𝗹𝗹𝗶𝗻𝗴 𝗔𝗹𝗹 𝗛𝗲𝗿𝗼𝗲𝘀! 🦇',
+      description: `
+      
+🌃 The sky is lit with the signal. Competitors, it’s your time to rise. The registrations for J'puraXtreme 2.0 are officially open now!
+
+🔗Register now: japuraXtreme.online
+
+Prepare to face the ultimate coding showdown and prove your skills! 🔥
+
+Organized by: Computer Society Chapter, IEEE Student Branch, University of Sri Jayewardenepura
+
+Design and Caption By : Malanka Wickramasinghe
+
+ `,
+      buttontext: null,
+      buttonlink: "#",
+      date: "",
+      time: "",
+      location: "",
+      status: "ongoing",
+      image: JpuraXtreme_OC.image8,
+      registrations: null,
+     hashtags: ["JapuraXtreme2_0","IEEE","USJ","IEEESB","CS"],
+      maxCapacity: null,
+      tags: ["𝐉’𝐩𝐮𝐫𝐚𝐗𝐭𝐫𝐞𝐦𝐞 𝟐.𝟎 ", "ProgrammingCompetition"],
+      branch: "USJ",
+      timeline: [],
+    },
+  {
+      id: 8,
+      type: "sb-event",
+      title: '🦇 𝘾𝙤𝙙𝙚, 𝙍𝙞𝙨𝙚, 𝘾𝙤𝙣𝙦𝙪𝙚𝙧!',
+      description: `
+      
+The wait is over! the shadows have cleared, and the official 𝐉’𝐏𝐔𝐑𝐀𝐗𝐓𝐑𝐄𝐌𝐄 𝟐.𝟎 website is 𝐍𝐎𝐖 𝐋𝐈𝐕𝐄! 🌐
+
+Uncover every detail: challenges, registration, and how you can step into the spotlight of the most electrifying hackathon.
+
+⚡𝙑𝙞𝙨𝙞𝙩 𝙪𝙨: www.japuraxtreme.online
+
+The city will soon call its heroes. Are you ready to rise from the dark? 💥
+
+Design by: Oshan lakshika
+Caption by: Nethara Vidmantha
+
+ `,
+      buttontext: null,
+      buttonlink: "#",
+      date: "",
+      time: "",
+      location: "",
+      status: "ongoing",
+      image: JpuraXtreme_OC.image7,
+      registrations: null,
+      hashtags: ["JapuraXtreme2_0","IEEE","USJ","IEEESB","CS"],
+      maxCapacity: null,
+      tags: ["𝐉’𝐩𝐮𝐫𝐚𝐗𝐭𝐫𝐞𝐦𝐞 𝟐.𝟎 ", "ProgrammingCompetition"],
+      branch: "USJ",
+      timeline: [],
+    },
   {
       id: 7,
       type: "sb-event",
