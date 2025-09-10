@@ -1,9 +1,9 @@
 import image1 from "./image1.jpg";
 import image2 from "./image2.jpg";
 
-const KelaniXtreme_CS = {
+const RuslXtreme = {
   image1,
   image2,
 
 };
-export default KelaniXtreme_CS;
+export default RuslXtreme;

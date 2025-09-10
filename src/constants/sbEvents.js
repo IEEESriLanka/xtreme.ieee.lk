@@ -5,6 +5,8 @@ import GreenXtreme_CD from  "../assets/SB-Events/GreenXtreme_CD";
 import GreenXtreme_WS from  "../assets/SB-Events/GreenXtreme_WS";
 import NIBM_Codex from  "../assets/SB-Events/NIBM_Codex";
 import CINEC_RoadToXtreme from "../assets/SB-Events/CINEC_RoadToXtreme";
+import RuslXtreme from "../assets/SB-Events/RuslXtreme";
+import MoraXtreme from "../assets/SB-Events/MoraXtreme";
 
 // published
 // upcoming
@@ -12,6 +14,137 @@ import CINEC_RoadToXtreme from "../assets/SB-Events/CINEC_RoadToXtreme";
 // ongoing
 
 const sbEvents = [
+
+  {
+      id: 13,
+      type: "sb-event",
+      title: 'Registrations Now Open!',
+      description: `
+      🪄 THE PORTAL IS NOW OPEN! 🪄
+
+      Summon your squad , enter the holographic battle field of coding to conquer the 24 hour coding challenge. 
+      RUSLXtreme 2.0 awaits your team. Claim your spot before the portal closes.
+
+      Team Registration is NOW OPEN!
+
+      🎓 Organized by the IEEE Student Branch of Rajarata University of Sri Lanka.
+
+
+ `,
+      buttontext: "Register now",
+      buttonlink: "https://forms.gle/qeFRWgyjV2C1tVty9",
+      date: "21-09-2025",
+      time: "00:00",
+      location: "",
+      status: "ongoing",
+      image: RuslXtreme.image2,
+      registrations: null,
+      hashtags: ['RegisterNow' ,'Team Registration',  'IEEEXtreme19.0' ,'RUSLXtreme2.0', 'IEEE' ,'IEEESBRUSL' ,'RUSL', 'Hackathon', 'Coding' ,'AchievementIEEESriLanka'],
+      maxCapacity: null,
+      tags: ["Hackathon", "ProgrammingCompetition",'IEEEXtreme19.0'],
+      branch: "RUSL",
+      timeline: [],
+    },
+
+
+  {
+      id: 12,
+      type: "sb-event",
+      title: 'Registrations Now Open!',
+      description: `
+      Registrations Now Open for KelaniXtreme 2025! ✨
+
+Assemble your crew and dive into the ultimate coding adventure! 🌊
+
+🗓 Saturday,  September 27, 2025
+
+Open to all UOK undergraduates -
+No IEEE membership required
+
+Don’t miss the thrill - register now and claim your spot 🚀
+
+📞 Contact for More Info
+
+Imesh: 070 356 4926 
+
+ `,
+      buttontext: "Register now",
+      buttonlink: "https://forms.gle/Sb3Wj8K5KozBz1WS7",
+      date: "",
+      time: "",
+      location: "",
+      status: "ongoing",
+      image: KelaniXtreme_CS.image2,
+      registrations: null,
+      hashtags: ['KelaniXtreme','ProgrammingCompetition','IEEE','IEEEUOK','IEEEXtreme19','UOK'],
+      maxCapacity: null,
+      tags: ["Hackathon", "ProgrammingCompetition",'IEEEXtreme19'],
+      branch: "UOK",
+      timeline: [],
+    },
+
+  {
+      id: 11,
+      type: "sb-event",
+      title: 'RUSLXTREME Mini Hackathon',
+      description: `
+      Ready to Code? The Battle Begins ‼
+
+Registrations are now open for MoraXtreme 10.0, organized by the IEEE Student Branch of the University of Moratuwa together with the IEEE Computer Society. ⚡💻
+
+Step into the ultimate coding showdown, where teamwork, creativity, and problem-solving push you beyond limits. 🔥✨
+
+This coding adventure is here again - grander, faster, and more intense than ever before . 🚀💡
+-Inspired by PASSION to Transform beyond EXCELLENCE-
+
+ `,
+      buttontext: "Register now",
+      buttonlink: "https://forms.gle/jiF6QXNBAh4wedrE8",
+      date: "",
+      time: "",
+      location: "",
+      status: "ongoing",
+      image: MoraXtreme.image1,
+      registrations: null,
+      hashtags: ['MoraXtreme','IEEEXtreme','IEEESBUOM','IEEECSUOM','TERM2425'],
+      maxCapacity: null,
+      tags: ["Hackathon", "ProgrammingCompetition"],
+      branch: "UOM",
+      timeline: [],
+    },
+
+
+  {
+      id: 10,
+      type: "sb-event",
+      title: 'RUSLXTREME Mini Hackathon',
+      description: `
+      ⚡ CODING WARM UP , MINI HACKATHON! ⚡
+
+      Ready to level up before the battle begins?
+
+      Join our First magical RUSLXtreme 2.0 Bootcamp Mini Hackathon and gear up with the skills , tips and tricks to conquer the coding arena.
+
+      Don't miss the warm up challenge , the stage for the ultimate coding enchantment. 🪄
+
+    🎓 Organized by the IEEE Student Branch of Rajarata University of Sri Lanka.
+
+ `,
+      buttontext: "Register now",
+      buttonlink: "https://forms.gle/sNquycj6MgVjghKf8",
+      date: "27-09-2025",
+      time: "",
+      location: "Via Zoom Platform",
+      status: "ongoing",
+      image: RuslXtreme.image1,
+      registrations: null,
+      hashtags: ["IEEE","RUSL ","IEEESBRUSL ","IEEESriLanka",'MiniHackathon','Bootcamp1.0'],
+      maxCapacity: null,
+      tags: ["Hackathon", "ProgrammingCompetition",'Achievement '],
+      branch: "RUSL",
+      timeline: [],
+    },
+
     {
       id: 9,
       type: "sb-event",
