@@ -14,6 +14,28 @@ import MoraXtreme from "../assets/SB-Events/MoraXtreme";
 // ongoing
 
 const sbEvents = [
+  {
+      id: 14,
+      type: "sb-event",
+      title: '🌑 Darkness falls…',
+      description: `
+      The ultimate challenge awakens ⚡ Only the fearless dare to step into the Xtreme 🛡
+
+ `,
+      buttontext: null,
+      buttonlink: "#",
+      date: "",
+      time: "",
+      location: "",
+      status: "upcoming",
+      image: CINEC_RoadToXtreme.image2,
+      registrations: null,
+      hashtags: ["RoadToXtreme1","IEEEXtreme19","CINECIEEE"],
+      maxCapacity: null,
+      tags: ["RoadToXtreme1", "ProgrammingCompetition"],
+      branch: "CINEC",
+      timeline: [],
+    },
 
   {
       id: 13,

@@ -6,7 +6,23 @@ const SBEvents = ({ onEventSelect }) => {
   const [visible, setVisible] = useState(false);
   const [selectedBranch, setSelectedBranch] = useState("All");
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef(null);
+
+  // Responsive events per page
+  const eventsPerPage = isMobile ? 3 : 6;
+
+  // Check for mobile screen size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Fade-in animation when scrolling into view
   useEffect(() => {
@@ -19,6 +35,11 @@ const SBEvents = ({ onEventSelect }) => {
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
+
+  // Reset to first page when branch changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedBranch]);
 
   // List of 22 branches
 const branches = [
@@ -46,18 +67,28 @@ const branches = [
     "UWU",
   ];
 
-  // Sample events with branch - updated to match Events component structure
-
   // Filter events by selected branch
   const filteredEvents =
     selectedBranch === "All"
       ? sbEvents
       : sbEvents.filter((event) => event.branch === selectedBranch);
 
+  // Pagination logic
+  const totalPages = Math.ceil(filteredEvents.length / eventsPerPage);
+  const startIndex = (currentPage - 1) * eventsPerPage;
+  const endIndex = startIndex + eventsPerPage;
+  const currentEvents = filteredEvents.slice(startIndex, endIndex);
+
   const handleEventClick = (event) => {
     if (onEventSelect) {
       onEventSelect(event);
     }
+  };
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    // Smooth scroll to top of section when page changes
+    sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   const getStatusColor = (status) => {
@@ -89,7 +120,7 @@ const branches = [
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth={2}
-              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z"
             />
           </svg>
         );
@@ -105,7 +136,7 @@ const branches = [
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth={2}
-              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z"
             />
           </svg>
         );
@@ -118,7 +149,93 @@ const branches = [
       month: "short",
       day: "numeric",
       year: "numeric",
-    }); 
+    });
+  };
+
+  // Pagination component
+  const PaginationControls = () => {
+    if (totalPages <= 1) return null;
+
+    const pageNumbers = [];
+    const maxVisiblePages = isMobile ? 3 : 5;
+    
+    let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+    let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+    
+    if (endPage - startPage + 1 < maxVisiblePages) {
+      startPage = Math.max(1, endPage - maxVisiblePages + 1);
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
+      pageNumbers.push(i);
+    }
+
+    return (
+      <div className="flex items-center justify-center gap-2 mt-8 flex-wrap">
+        {/* Previous button */}
+        <button
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+          className="px-3 py-2 rounded-lg border border-gray-200 text-gray-600 hover:bg-blue-50 hover:border-blue-200 hover:text-blue-600 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:border-gray-200 disabled:hover:text-gray-600 transition-all duration-300"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        {/* First page if not visible */}
+        {startPage > 1 && (
+          <>
+            <button
+              onClick={() => handlePageChange(1)}
+              className="px-3 py-2 rounded-lg border border-gray-200 text-gray-600 hover:bg-blue-50 hover:border-blue-200 hover:text-blue-600 transition-all duration-300"
+            >
+              1
+            </button>
+            {startPage > 2 && <span className="px-2 text-gray-400">...</span>}
+          </>
+        )}
+
+        {/* Page numbers */}
+        {pageNumbers.map((pageNum) => (
+          <button
+            key={pageNum}
+            onClick={() => handlePageChange(pageNum)}
+            className={`px-3 py-2 rounded-lg border transition-all duration-300 ${
+              currentPage === pageNum
+                ? "bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-500/25"
+                : "border-gray-200 text-gray-600 hover:bg-blue-50 hover:border-blue-200 hover:text-blue-600"
+            }`}
+          >
+            {pageNum}
+          </button>
+        ))}
+
+        {/* Last page if not visible */}
+        {endPage < totalPages && (
+          <>
+            {endPage < totalPages - 1 && <span className="px-2 text-gray-400">...</span>}
+            <button
+              onClick={() => handlePageChange(totalPages)}
+              className="px-3 py-2 rounded-lg border border-gray-200 text-gray-600 hover:bg-blue-50 hover:border-blue-200 hover:text-blue-600 transition-all duration-300"
+            >
+              {totalPages}
+            </button>
+          </>
+        )}
+
+        {/* Next button */}
+        <button
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+          className="px-3 py-2 rounded-lg border border-gray-200 text-gray-600 hover:bg-blue-50 hover:border-blue-200 hover:text-blue-600 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:border-gray-200 disabled:hover:text-gray-600 transition-all duration-300"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    );
   };
 
   return (
@@ -230,6 +347,16 @@ const branches = [
           </div>
         </div>
 
+        {/* Events Counter and Current Page Info */}
+        {filteredEvents.length > 0 && (
+          <div className="text-center mb-6">
+            <p className="text-gray-600 text-sm">
+              Showing {startIndex + 1}-{Math.min(endIndex, filteredEvents.length)} of {filteredEvents.length} events
+              {selectedBranch !== "All" && ` for ${selectedBranch}`}
+            </p>
+          </div>
+        )}
+
         {/* Events or Placeholder */}
         {filteredEvents.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-16 text-center">
@@ -258,142 +385,171 @@ const branches = [
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredEvents.map((event, index) => (
-              <div
-                key={event.id}
-                className={`bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 group overflow-hidden hover:-translate-y-2 cursor-pointer ${
-                  visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-                }`}
-                style={{ transitionDelay: `${index * 150}ms` }}
-                onMouseEnter={() => setHoveredCard(event.id)}
-                onMouseLeave={() => setHoveredCard(null)}
-                onClick={() => handleEventClick(event)}
-              >
-                {/* Event Image/Header */}
-                <div className="relative h-64 overflow-hidden">
-                  {event.image ? (
-                    <>
-                      {/* Event Image */}
-                      <img
-                        src={event.image}
-                        alt={event.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      {/* Subtle overlay for poster-style images */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </>
-                  ) : (
-                    /* Default gradient background when no image */
-                    <div className="w-full h-full bg-gradient-to-br from-blue-500 to-cyan-400"></div>
-                  )}
-
-                  {/* Type Icon - positioned to not interfere with poster content */}
-                  <div className="absolute top-3 left-3 w-10 h-10 bg-black/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20">
-                    {getTypeIcon(event.type)}
-                  </div>
-
-                  {/* Status Badge - repositioned for better visibility */}
-                  <div
-                    className={`absolute top-3 right-3 px-2 py-1 rounded-md text-xs font-semibold border backdrop-blur-md ${getStatusColor(
-                      event.status
-                    )} shadow-sm`}
-                  >
-                    {event.status.charAt(0).toUpperCase() + event.status.slice(1)}
-                  </div>
-
-                  {/* Animated Pattern Overlay - only show when no image */}
-                  {!event.image && (
-                    <div className="absolute inset-0 opacity-10">
-                      <div
-                        className="absolute inset-0"
-                        style={{
-                          backgroundImage: `
-                          radial-gradient(circle at 25% 25%, white 2px, transparent 2px),
-                          radial-gradient(circle at 75% 75%, white 2px, transparent 2px)
-                        `,
-                          backgroundSize: "40px 40px",
-                          animation:
-                            hoveredCard === event.id
-                              ? "float 3s ease-in-out infinite"
-                              : "none",
-                        }}
-                      ></div>
-                    </div>
-                  )}
-
-                  {/* Date Display - only show when no poster image or for minimal interference */}
-                  {!event.image && (
-                    <div className="absolute bottom-4 left-4 text-white drop-shadow-lg">
-                      {isNaN(new Date(event.date).getTime()) ? (
-                        <div className="text-2xl font-bold">{event.date}</div>
-                      ) : (
-                        // If it's a valid date, show formatted parts
-                        <>
-                          <div className="text-2xl font-bold">
-                            {formatDate(event.date).split(" ")[1]}
-                          </div>
-                          <div className="text-sm opacity-90">
-                            {formatDate(event.date).split(" ")[0]}{" "}
-                            {formatDate(event.date).split(" ")[2]}
-                          </div>
-                        </>
-                      )}
-                    </div>
-                  )}
-
-                  {/* Floating particles - subtle for poster images */}
-                  <div className="absolute top-12 right-12 w-1.5 h-1.5 bg-white/30 rounded-full opacity-0 group-hover:opacity-60 group-hover:animate-ping transition-all duration-500"></div>
-                  <div className="absolute bottom-12 right-8 w-1 h-1 bg-white/20 rounded-full opacity-0 group-hover:opacity-40 group-hover:animate-bounce transition-all duration-700"></div>
-                </div>
-
-                {/* Event Content */}
-                <div className="p-5">
-                  <div className="flex flex-wrap gap-2 mb-3">
-                    {event.tags.map((tag, tagIndex) => (
-                      <span
-                        key={tagIndex}
-                        className="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Date display in content area for poster images */}
-                  {event.image && (
-                    <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
-                      {!isNaN(new Date(event.date).getTime())&&
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {currentEvents.map((event, index) => (
+                <div
+                  key={event.id}
+                  className={`bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 group overflow-hidden hover:-translate-y-2 cursor-pointer ${
+                    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+                  }`}
+                  style={{ transitionDelay: `${index * 150}ms` }}
+                  onMouseEnter={() => setHoveredCard(event.id)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                  onClick={() => handleEventClick(event)}
+                >
+                  {/* Event Image/Header */}
+                  <div className="relative h-64 overflow-hidden">
+                    {event.image ? (
+                      <>
+                        {/* Event Image */}
+                        <img
+                          src={event.image}
+                          alt={event.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
-                      </svg>}
-                      {!isNaN(new Date(event.date).getTime())
-                        ? formatDate(event.date)
-                        : event.date}
+                        {/* Subtle overlay for poster-style images */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </>
+                    ) : (
+                      /* Default gradient background when no image */
+                      <div className="w-full h-full bg-gradient-to-br from-blue-500 to-cyan-400"></div>
+                    )}
+
+                    {/* Type Icon - positioned to not interfere with poster content */}
+                    <div className="absolute top-3 left-3 w-10 h-10 bg-black/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20">
+                      {getTypeIcon(event.type)}
                     </div>
-                  )}
 
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
-                    {event.title}
-                  </h3>
+                    {/* Status Badge - repositioned for better visibility */}
+                    <div
+                      className={`absolute top-3 right-3 px-2 py-1 rounded-md text-xs font-semibold border backdrop-blur-md ${getStatusColor(
+                        event.status
+                      )} shadow-sm`}
+                    >
+                      {event.status.charAt(0).toUpperCase() + event.status.slice(1)}
+                    </div>
 
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">
-                    {event.description}
-                  </p>
+                    {/* Animated Pattern Overlay - only show when no image */}
+                    {!event.image && (
+                      <div className="absolute inset-0 opacity-10">
+                        <div
+                          className="absolute inset-0"
+                          style={{
+                            backgroundImage: `
+                            radial-gradient(circle at 25% 25%, white 2px, transparent 2px),
+                            radial-gradient(circle at 75% 75%, white 2px, transparent 2px)
+                          `,
+                            backgroundSize: "40px 40px",
+                            animation:
+                              hoveredCard === event.id
+                                ? "float 3s ease-in-out infinite"
+                                : "none",
+                          }}
+                        ></div>
+                      </div>
+                    )}
 
-                  {/* Event Details */}
-                  <div className="space-y-1.5 mb-4">
-                    {event.time && (
+                    {/* Date Display - only show when no poster image or for minimal interference */}
+                    {!event.image && (
+                      <div className="absolute bottom-4 left-4 text-white drop-shadow-lg">
+                        {isNaN(new Date(event.date).getTime()) ? (
+                          <div className="text-2xl font-bold">{event.date}</div>
+                        ) : (
+                          // If it's a valid date, show formatted parts
+                          <>
+                            <div className="text-2xl font-bold">
+                              {formatDate(event.date).split(" ")[1]}
+                            </div>
+                            <div className="text-sm opacity-90">
+                              {formatDate(event.date).split(" ")[0]}{" "}
+                              {formatDate(event.date).split(" ")[2]}
+                            </div>
+                          </>
+                        )}
+                      </div>
+                    )}
+
+                    {/* Floating particles - subtle for poster images */}
+                    <div className="absolute top-12 right-12 w-1.5 h-1.5 bg-white/30 rounded-full opacity-0 group-hover:opacity-60 group-hover:animate-ping transition-all duration-500"></div>
+                    <div className="absolute bottom-12 right-8 w-1 h-1 bg-white/20 rounded-full opacity-0 group-hover:opacity-40 group-hover:animate-bounce transition-all duration-700"></div>
+                  </div>
+
+                  {/* Event Content */}
+                  <div className="p-5">
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {event.tags.map((tag, tagIndex) => (
+                        <span
+                          key={tagIndex}
+                          className="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-medium"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Date display in content area for poster images */}
+                    {event.image && (
+                      <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+                        {!isNaN(new Date(event.date).getTime())&&
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z"
+                          />
+                        </svg>}
+                        {!isNaN(new Date(event.date).getTime())
+                          ? formatDate(event.date)
+                          : event.date}
+                      </div>
+                    )}
+
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                      {event.title}
+                    </h3>
+
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">
+                      {event.description}
+                    </p>
+
+                    {/* Event Details */}
+                    <div className="space-y-1.5 mb-4">
+                      {event.time && (
+                        <div className="flex items-center gap-2 text-sm text-gray-500">
+                          <svg
+                            className="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                          </svg>
+
+                          {(() => {
+                            // Try parsing as a Date with today's date + time
+                            const testDate = new Date(`1970-01-01T${event.time}`);
+                            return isNaN(testDate.getTime())
+                              ? event.time
+                              : testDate.toLocaleTimeString([], {
+                                  hour: "2-digit",
+                                  minute: "2-digit",
+                                });
+                          })()}
+                        </div>
+                      )}
+                      {event.location && (
                       <div className="flex items-center gap-2 text-sm text-gray-500">
                         <svg
                           className="w-4 h-4"
@@ -405,90 +561,66 @@ const branches = [
                             strokeLinecap="round"
                             strokeLinejoin="round"
                             strokeWidth={2}
-                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                          />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                           />
                         </svg>
-
-                        {(() => {
-                          // Try parsing as a Date with today's date + time
-                          const testDate = new Date(`1970-01-01T${event.time}`);
-                          return isNaN(testDate.getTime())
-                            ? event.time
-                            : testDate.toLocaleTimeString([], {
-                                hour: "2-digit",
-                                minute: "2-digit",
-                              });
-                        })()}
+                        {event.location}
                       </div>
                     )}
-                    {event.location && (
-                    <div className="flex items-center gap-2 text-sm text-gray-500">
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                    </div>
+
+                    {/* Stats and Action */}
+                    <div className="flex items-center justify-between">
+                      <div className="text-sm text-gray-500">
+                        {event.registrations && (
+                          <div className="flex items-center gap-1">
+                            <svg
+                              className="w-4 h-4"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                              />
+                            </svg>
+                            {event.registrations}{" "}
+                            {event.maxCapacity ? `/ ${event.maxCapacity}` : "registered"}
+                          </div>
+                        )}
+                      </div>
+
+                      <button
+                        className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm group/btn relative overflow-hidden"
+                        onClick={(e) => {
+                          e.stopPropagation(); // Prevent card click when button is clicked
+                          handleEventClick(event);
+                        }}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                      </svg>
-                      {event.location}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
+                        <span className="relative z-10">View Details</span>
+                      </button>
                     </div>
-                  )}
                   </div>
 
-                  {/* Stats and Action */}
-                  <div className="flex items-center justify-between">
-                    <div className="text-sm text-gray-500">
-                      {event.registrations && (
-                        <div className="flex items-center gap-1">
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                            />
-                          </svg>
-                          {event.registrations}{" "}
-                          {event.maxCapacity ? `/ ${event.maxCapacity}` : "registered"}
-                        </div>
-                      )}
-                    </div>
-
-                    <button
-                      className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm group/btn relative overflow-hidden"
-                      onClick={(e) => {
-                        e.stopPropagation(); // Prevent card click when button is clicked
-                        handleEventClick(event);
-                      }}
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
-                      <span className="relative z-10">View Details</span>
-                    </button>
-                  </div>
+                  {/* Bottom accent line */}
+                  <div className="h-1 bg-gradient-to-r from-blue-500 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                 </div>
+              ))}
+            </div>
 
-                {/* Bottom accent line */}
-                <div className="h-1 bg-gradient-to-r from-blue-500 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-              </div>
-            ))}
-          </div>
+            {/* Pagination Controls */}
+            <PaginationControls />
+          </>
         )}
       </div>
 
