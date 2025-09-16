@@ -15,6 +15,78 @@ import MoraXtreme from "../assets/SB-Events/MoraXtreme";
 
 const sbEvents = [
   {
+      id: 16,
+      type: "sb-event",
+      title: 'Awareness Session NIBM Kandy ',
+      description: `
+      🚀 Awareness Session – NIBM Kandy 🚀
+
+      Get ready to power up your coding journey! ⚡
+      Join us for the Awareness Session at NIBM Kandy and learn everything you need to know to gear up for NIBMCodeX 1.0 - IEEEXtreme 19.0.
+
+
+      ✨ Be CodeX Ready, Be Future Ready.
+      Don’t miss out on this chance to get a head start and shine at NIBMCodeX 19.0 - IEEEXtreme 19.0 ! 💡
+
+ `,
+      buttontext: "Join NIBM Whatsapp",
+      buttonlink: "https://chat.whatsapp.com/I4Ai7gc1EAs0lCjbBuNTQy?mode=ems_copy_c",
+      buttontext1: "Register for NIBMCodeX",
+      buttonlink1: "https://forms.gle/od6a75B4bYz1r2vQ7",
+      buttontext2: "Become an IEEE Student Member",
+      buttonlink2: "https://ieee.org",
+      buttontext3: "Step-by-step Guide",
+      buttonlink3: "https://drive.google.com/drive/folders/1yVrS_TxeiTU0VrFT0PRS3fQ0CCFdaluf?usp=sharing",
+      date: "18-09-2025",
+      time: "9.30 AM",
+      location: "Kandy Branch",
+      status: "upcoming",
+      image: NIBM_Codex.image3,
+      registrations: null,
+      hashtags: ["NIBMCodeX 1_0","IEEEXtreme19","Kandy ","CodeXReady"],
+      maxCapacity: null,
+      tags: ["CodeXReady ", "AwarenessSession"],
+      branch: "NIBM",
+      timeline: [],
+    },
+
+   {
+      id: 15,
+      type: "sb-event",
+      title: 'Awareness Session NIBM Kurunegala',
+      description: `
+      🚀 Awareness Session – NIBM Kurunegala 🚀
+
+      Get ready to power up your coding journey! ⚡
+      Join us for the Awareness Session at NIBM Kurunegala and learn everything you need to know to gear up for NIBMCodeX 1.0 - IEEEXtreme 19.0.
+      
+
+      ✨ Be CodeX Ready, Be Future Ready.
+      Don’t miss out on this chance to get a head start and shine at NIBMCodeX 19.0 - IEEEXtreme 19.0 ! 💡
+
+ `,
+      buttontext: "Join NIBM Whatsapp",
+      buttonlink: "https://chat.whatsapp.com/I4Ai7gc1EAs0lCjbBuNTQy?mode=ems_copy_c",
+      buttontext1: "Register for NIBMCodeX",
+      buttonlink1: "https://forms.gle/od6a75B4bYz1r2vQ7",
+      buttontext2: "Become an IEEE Student Member",
+      buttonlink2: "https://ieee.org",
+      buttontext3: "Step-by-step Guide",
+      buttonlink3: "https://drive.google.com/drive/folders/1yVrS_TxeiTU0VrFT0PRS3fQ0CCFdaluf?usp=sharing",
+      date: "18-09-2025",
+      time: "9.30 AM",
+      location: "Kurunegala Branch",
+      status: "upcoming",
+      image: NIBM_Codex.image2,
+      registrations: null,
+      hashtags: ["NIBMCodeX 1_0","IEEEXtreme19","Kurunegala","CodeXReady"],
+      maxCapacity: null,
+      tags: ["CodeXReady ", "AwarenessSession"],
+      branch: "NIBM",
+      timeline: [],
+    },
+
+  {
       id: 14,
       type: "sb-event",
       title: '🌑 Darkness falls…',
