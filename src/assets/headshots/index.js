@@ -23,6 +23,8 @@ import Mahasen_UOJ from "./Mahasen_UOJ.JPG";
 import Themiya_KDU from "./Themiya_KDU.jpg";
 
 import Heshan_SLIIT from "./Heshan_SLIIT.png";
+import Yasas_UoVT from "./Yasas_UoVT.jpg";
+import Sanjeewa_UWU from "./Sanjeewa_UWU.jpg";
 
 const headshots = {
   Kavindu_Lead,
@@ -46,5 +48,7 @@ const headshots = {
   Bhasura_UCSC,
   Mahasen_UOJ,
   Themiya_KDU,
+  Yasas_UoVT,
+  Sanjeewa_UWU
 };
 export default headshots;

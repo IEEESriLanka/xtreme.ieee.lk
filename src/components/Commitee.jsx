@@ -204,6 +204,20 @@ const Committee = () => {
       university: "SLIIT",
       image: headshots.Heshan_SLIIT,
       linkedin: "https://www.linkedin.com/in/heshan-gimhana"
+    },
+    {
+      id: 20,
+      name: "Yasas Banuka",
+      university: "UoVT",
+      image: headshots.Yasas_UoVT,
+      linkedin: "https://www.linkedin.com/in/yasasbanuka/"
+    },
+    {
+      id: 21,
+      name: "Sanjeewa Liyanage",
+      university: "UWU",
+      image: headshots.Sanjeewa_UWU,
+      linkedin: "https://www.linkedin.com/in/sanjeewa-prabath-liyanage/"
     }
   ];
 
