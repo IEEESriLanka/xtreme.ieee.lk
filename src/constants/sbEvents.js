@@ -13,7 +13,48 @@ import MoraXtreme from "../assets/SB-Events/MoraXtreme";
 // active
 // ongoing
 
-const sbEvents = [
+const sbEvents = [ {
+      id: 17,
+      type: "sb-event",
+      title: 'Join With Us',
+      description: `
+      🚀 𝗝𝗼𝗶𝗻 𝘁𝗵𝗲 𝗰𝗼𝗱𝗲 𝗰𝗵𝗮𝗹𝗹𝗲𝗻𝗴𝗲!
+
+      𝗣𝗿𝗲𝗫𝘁𝗿𝗲𝗺𝗲 - is here to gear you up for the global coding marathon 𝗜𝗘𝗘𝗘𝗫𝘁𝗿𝗲𝗺𝗲 19.0 💻🔥
+
+      This 6-hour mini IEEEXtreme event begins at 00:00 GMT and ends at 17:59 on 21st September.
+      Registered individuals and teams can attempt to solve coding challenges within a 6-hour time limit.
+
+      ✅ Step 1: Register as an IEEE Student
+
+      ✅ Step 2: Register for NIBMCodeX 1.0
+
+      ✅ Step 3: Compete in PreXtreme & level up your coding skills!
+
+
+      🌍 Connect. Compete. Conquer.
+
+ `,
+      buttontext: "Register as an IEEE Student",
+      buttonlink: "https://ieee.org",
+      buttontext1: "Register for NIBMCodeX 1.0",
+      buttonlink1: "https://forms.gle/od6a75B4bYz1r2vQ7",
+      buttontext2: "Join the IEEEXtreme Community",
+      buttonlink2: "https://chat.whatsapp.com/I4Ai7gc1EAs0lCjbBuNTQy?mode=ems_copy_c",
+      buttontext3: "Step-by-step guide",
+      buttonlink3: "https://drive.google.com/drive/folders/1yVrS_TxeiTU0VrFT0PRS3fQ0CCFdaluf?usp=sharing",
+      date: "19-09-2025",
+      time: "",
+      location: "",
+      status: "upcoming",
+      image: NIBM_Codex.image4,
+      registrations: null,
+      hashtags: ['PreXtreme' ,'IEEEXtreme 19_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
+      maxCapacity: null,
+      tags: ["NIBMCodeX 1_0 ", "PreXtreme","NIBM"],
+      branch: "NIBM",
+      timeline: [],
+    },
   {
       id: 16,
       type: "sb-event",

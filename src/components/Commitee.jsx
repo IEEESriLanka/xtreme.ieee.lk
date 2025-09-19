@@ -67,7 +67,7 @@ const Committee = () => {
       title: "Section Co-Lead",
       image: headshots.Ashwinie_Co_Lead, 
       linkedin: "https://www.linkedin.com/in/ashwinie-jayamanna",
-      email: "ashwiniejayamanna@ieee.org"
+      email: "ashwiniejay@ieee.org"
     }
   ];
 
