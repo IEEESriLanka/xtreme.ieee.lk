@@ -6,6 +6,7 @@ import image5 from "./image5.jpg";
 import image6 from "./image6.jpg";
 import image7 from "./image7.jpg";
 import image8 from "./image8.jpg";
+import image9 from "./image9.jpg";
 
 const JpuraXtreme_OC = {
   image1,
@@ -15,6 +16,7 @@ const JpuraXtreme_OC = {
   image5,
   image6,
   image7,
-  image8
+  image8,
+  image9
 };
 export default JpuraXtreme_OC;

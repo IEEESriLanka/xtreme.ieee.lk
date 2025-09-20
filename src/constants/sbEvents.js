@@ -13,7 +13,42 @@ import MoraXtreme from "../assets/SB-Events/MoraXtreme";
 // active
 // ongoing
 
-const sbEvents = [ {
+const sbEvents = [ 
+  {
+      id: 18,
+      type: "sb-event",
+      title: 'Awareness Session',
+      description: `
+      ⚡ Awareness Session: Coming Soon ⚡
+
+      Are you ready for J’puraXtreme 2.0?
+
+      The countdown to the ultimate coding showdown is ticking, and every hero needs guidance before the fight. ⏳🦇
+
+      Await an exclusive awareness session. Where insights, strategies, and guidance will help you sharpen your skills for the battle ahead! 🧠🔥
+
+      For registration related inquiries contact :
+
+    +94 74 042 3126 - inuka
+    +94 76 666 8450 - sadeepa
+
+
+ `,
+      buttontext: "Register now",
+      buttonlink: "http://www.japuraxtreme.online",
+      date: "",
+      time: "",
+      location: "",
+      status: "upcoming",
+      image: JpuraXtreme_OC.image8,
+      registrations: null,
+      hashtags: ['Japuraxtreme2_0'  ,'IEEE','USJ','IEEESB','CS'],
+      maxCapacity: null,
+      tags: ["Japuraxtreme2_0", "IEEESB","USJ"],
+      branch: "USJ",
+      timeline: [],
+    },
+  {
       id: 17,
       type: "sb-event",
       title: 'Join With Us',
