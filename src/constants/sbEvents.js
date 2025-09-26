@@ -13,9 +13,169 @@ import MoraXtreme from "../assets/SB-Events/MoraXtreme";
 // active
 // ongoing
 
-const sbEvents = [ 
+const sbEvents = [
+
+  {
+      id: 19,
+      type: "sb-event",
+      title: 'Awareness Session - NIBM Galle',
+      description: `
+      🚀 Awareness Session – NIBM Galle 🚀
+
+      Get ready to power up your coding journey! ⚡
+      Join us for the Awareness Session at NIBM Galle and learn everything you need to know to gear up for NIBMCodeX 1.0 - IEEEXtreme 19.0.
+
+
+      ✨ Be CodeX Ready, Be Future Ready.
+      Don’t miss out on this chance to get a head start and shine at NIBMCodeX 1.0 - IEEEXtreme 19.0! 💡
+
+
+
+ `,
+      buttontext: "Register as an IEEE Student",
+      buttonlink: "https://ieee.org",
+      buttontext1: "Register for NIBMCodeX 1.0",
+      buttonlink1: "https://forms.gle/od6a75B4bYz1r2vQ7",
+      buttontext2: "Join the IEEEXtreme Community",
+      buttonlink2: "https://chat.whatsapp.com/I4Ai7gc1EAs0lCjbBuNTQy?mode=ems_copy_c",
+      buttontext3: "Step-by-step guide",
+      buttonlink3: "https://drive.google.com/drive/folders/1yVrS_TxeiTU0VrFT0PRS3fQ0CCFdaluf?usp=sharing",
+      date: "23-09-2025",
+      time: "1.30 PM",
+      location: "Galle Branch",
+      status: "upcoming",
+      image: NIBM_Codex.image8,
+      registrations: null,
+      hashtags: ['PreXtreme' ,'IEEEXtreme 19_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
+      maxCapacity: null,
+      tags: ["NIBMCodeX 1_0 ", "PreXtreme","NIBM"],
+      branch: "NIBM",
+      timeline: [],
+    },
+
+
   {
       id: 18,
+      type: "sb-event",
+      title: 'Awareness Session - NIBM Matara',
+      description: `
+      🚀 Awareness Session – NIBM Matara 🚀
+
+      Get ready to power up your coding journey! ⚡
+      Join us for the Awareness Session at NIBM Matara and learn everything you need to know to gear up for NIBMCodeX 1.0 - IEEEXtreme 19.0.
+
+      ✨ Be CodeX Ready, Be Future Ready.
+      Don’t miss out on this chance to get a head start and shine at NIBMCodeX 1.0 - IEEEXtreme 19.0! 💡
+
+
+ `,
+      buttontext: "Register as an IEEE Student",
+      buttonlink: "https://ieee.org",
+      buttontext1: "Register for NIBMCodeX 1.0",
+      buttonlink1: "https://forms.gle/od6a75B4bYz1r2vQ7",
+      buttontext2: "Join the IEEEXtreme Community",
+      buttonlink2: "https://chat.whatsapp.com/I4Ai7gc1EAs0lCjbBuNTQy?mode=ems_copy_c",
+      buttontext3: "Step-by-step guide",
+      buttonlink3: "https://drive.google.com/drive/folders/1yVrS_TxeiTU0VrFT0PRS3fQ0CCFdaluf?usp=sharing",
+      date: "23-09-2025",
+      time: "9.30 AM",
+      location: "Matara Branch",
+      status: "upcoming",
+      image: NIBM_Codex.image7,
+      registrations: null,
+      hashtags: ['PreXtreme' ,'IEEEXtreme 19_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
+      maxCapacity: null,
+      tags: ["NIBMCodeX 1_0 ", "PreXtreme","NIBM"],
+      branch: "NIBM",
+      timeline: [],
+    },
+
+
+{
+      id: 17,
+      type: "sb-event",
+      title: 'Awareness Session',
+      description: `
+      ⏳ IT’S CLOSER THAN YOU THINK!
+
+        The countdown is on… NIBMCodeX 1.0 – the 24-hour hackathon aligned with IEEEXtreme 19.0 – is almost here! 🚀
+
+        🎯 Fourth stop: Galle Awareness Session
+
+        📌Answers await for your curiosity 📝
+
+        But why wait for the session when you can secure your spot right now? 👨‍💻👩‍💻
+
+        Stay tuned for more updates, guidelines & surprises! ⚡
+        This is your chance to Code. Compete. Conquer.
+
+ `,
+      buttontext: "Register as an IEEE Student",
+      buttonlink: "https://ieee.org",
+      buttontext1: "Register for NIBMCodeX 1.0",
+      buttonlink1: "https://forms.gle/od6a75B4bYz1r2vQ7",
+      buttontext2: "Join the IEEEXtreme Community",
+      buttonlink2: "https://chat.whatsapp.com/I4Ai7gc1EAs0lCjbBuNTQy?mode=ems_copy_c",
+      buttontext3: "Step-by-step guide",
+      buttonlink3: "https://drive.google.com/drive/folders/1yVrS_TxeiTU0VrFT0PRS3fQ0CCFdaluf?usp=sharing",
+      date: "",
+      time: "",
+      location: "",
+      status: "upcoming",
+      image: NIBM_Codex.image6,
+      registrations: null,
+      hashtags: ['PreXtreme' ,'IEEEXtreme 19_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
+      maxCapacity: null,
+      tags: ["NIBMCodeX 1_0 ", "PreXtreme","NIBM"],
+      branch: "NIBM",
+      timeline: [],
+    },
+
+{
+      id: 16,
+      type: "sb-event",
+      title: 'Awareness Session',
+      description: `
+      ⏳ IT’S CLOSER THAN YOU THINK!
+
+          The countdown is on… NIBMCodeX 1.0 – the 24-hour hackathon aligned with IEEEXtreme 19.0 – is almost here! 🚀
+
+          🎯 Third stop: Matara Awareness Session
+
+          📌Answers await for your curiosity 📝
+
+          But why wait for the session when you can secure your spot right now? 👨‍💻👩‍💻
+
+        Stay tuned for more updates, guidelines & surprises! ⚡
+        This is your chance to Code. Compete. Conquer.
+
+ `,
+      buttontext: "Register as an IEEE Student",
+      buttonlink: "https://ieee.org",
+      buttontext1: "Register for NIBMCodeX 1.0",
+      buttonlink1: "https://forms.gle/od6a75B4bYz1r2vQ7",
+      buttontext2: "Join the IEEEXtreme Community",
+      buttonlink2: "https://chat.whatsapp.com/I4Ai7gc1EAs0lCjbBuNTQy?mode=ems_copy_c",
+      buttontext3: "Step-by-step guide",
+      buttonlink3: "https://drive.google.com/drive/folders/1yVrS_TxeiTU0VrFT0PRS3fQ0CCFdaluf?usp=sharing",
+      date: "",
+      time: "",
+      location: "",
+      status: "upcoming",
+      image: NIBM_Codex.image5,
+      registrations: null,
+      hashtags: ['PreXtreme' ,'IEEEXtreme 19_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
+      maxCapacity: null,
+      tags: ["NIBMCodeX 1_0 ", "PreXtreme","NIBM"],
+      branch: "NIBM",
+      timeline: [],
+    },
+
+
+    
+    
+  {
+      id: 15,
       type: "sb-event",
       title: 'Awareness Session',
       description: `
@@ -49,7 +209,7 @@ const sbEvents = [
       timeline: [],
     },
   {
-      id: 17,
+      id: 14,
       type: "sb-event",
       title: 'Join With Us',
       description: `
@@ -91,7 +251,7 @@ const sbEvents = [
       timeline: [],
     },
   {
-      id: 16,
+      id: 13,
       type: "sb-event",
       title: 'Awareness Session NIBM Kandy ',
       description: `
@@ -127,7 +287,7 @@ const sbEvents = [
     },
 
    {
-      id: 15,
+      id: 12,
       type: "sb-event",
       title: 'Awareness Session NIBM Kurunegala',
       description: `
@@ -163,7 +323,7 @@ const sbEvents = [
     },
 
   {
-      id: 14,
+      id: 11,
       type: "sb-event",
       title: '🌑 Darkness falls…',
       description: `
@@ -186,39 +346,7 @@ const sbEvents = [
     },
 
   {
-      id: 13,
-      type: "sb-event",
-      title: 'Registrations Now Open!',
-      description: `
-      🪄 THE PORTAL IS NOW OPEN! 🪄
-
-      Summon your squad , enter the holographic battle field of coding to conquer the 24 hour coding challenge. 
-      RUSLXtreme 2.0 awaits your team. Claim your spot before the portal closes.
-
-      Team Registration is NOW OPEN!
-
-      🎓 Organized by the IEEE Student Branch of Rajarata University of Sri Lanka.
-
-
- `,
-      buttontext: "Register now",
-      buttonlink: "https://forms.gle/qeFRWgyjV2C1tVty9",
-      date: "21-09-2025",
-      time: "00:00",
-      location: "",
-      status: "ongoing",
-      image: RuslXtreme.image2,
-      registrations: null,
-      hashtags: ['RegisterNow' ,'Team Registration',  'IEEEXtreme19.0' ,'RUSLXtreme2.0', 'IEEE' ,'IEEESBRUSL' ,'RUSL', 'Hackathon', 'Coding' ,'AchievementIEEESriLanka'],
-      maxCapacity: null,
-      tags: ["Hackathon", "ProgrammingCompetition",'IEEEXtreme19.0'],
-      branch: "RUSL",
-      timeline: [],
-    },
-
-
-  {
-      id: 12,
+      id: 10,
       type: "sb-event",
       title: 'Registrations Now Open!',
       description: `
@@ -248,73 +376,10 @@ Imesh: 070 356 4926
       registrations: null,
       hashtags: ['KelaniXtreme','ProgrammingCompetition','IEEE','IEEEUOK','IEEEXtreme19','UOK'],
       maxCapacity: null,
-      tags: ["Hackathon", "ProgrammingCompetition",'IEEEXtreme19'],
+      tags: ["ProgrammingCompetition",'IEEEXtreme19'],
       branch: "UOK",
       timeline: [],
     },
-
-  {
-      id: 11,
-      type: "sb-event",
-      title: 'RUSLXTREME Mini Hackathon',
-      description: `
-      Ready to Code? The Battle Begins ‼
-
-Registrations are now open for MoraXtreme 10.0, organized by the IEEE Student Branch of the University of Moratuwa together with the IEEE Computer Society. ⚡💻
-
-Step into the ultimate coding showdown, where teamwork, creativity, and problem-solving push you beyond limits. 🔥✨
-
-This coding adventure is here again - grander, faster, and more intense than ever before . 🚀💡
--Inspired by PASSION to Transform beyond EXCELLENCE-
-
- `,
-      buttontext: "Register now",
-      buttonlink: "https://forms.gle/jiF6QXNBAh4wedrE8",
-      date: "",
-      time: "",
-      location: "",
-      status: "ongoing",
-      image: MoraXtreme.image1,
-      registrations: null,
-      hashtags: ['MoraXtreme','IEEEXtreme','IEEESBUOM','IEEECSUOM','TERM2425'],
-      maxCapacity: null,
-      tags: ["Hackathon", "ProgrammingCompetition"],
-      branch: "UOM",
-      timeline: [],
-    },
-
-
-  {
-      id: 10,
-      type: "sb-event",
-      title: 'RUSLXTREME Mini Hackathon',
-      description: `
-      ⚡ CODING WARM UP , MINI HACKATHON! ⚡
-
-      Ready to level up before the battle begins?
-
-      Join our First magical RUSLXtreme 2.0 Bootcamp Mini Hackathon and gear up with the skills , tips and tricks to conquer the coding arena.
-
-      Don't miss the warm up challenge , the stage for the ultimate coding enchantment. 🪄
-
-    🎓 Organized by the IEEE Student Branch of Rajarata University of Sri Lanka.
-
- `,
-      buttontext: "Register now",
-      buttonlink: "https://forms.gle/sNquycj6MgVjghKf8",
-      date: "27-09-2025",
-      time: "",
-      location: "Via Zoom Platform",
-      status: "ongoing",
-      image: RuslXtreme.image1,
-      registrations: null,
-      hashtags: ["IEEE","RUSL ","IEEESBRUSL ","IEEESriLanka",'MiniHackathon','Bootcamp1.0'],
-      maxCapacity: null,
-      tags: ["Hackathon", "ProgrammingCompetition",'Achievement '],
-      branch: "RUSL",
-      timeline: [],
-    },
-
     {
       id: 9,
       type: "sb-event",
@@ -350,7 +415,7 @@ Prepare to face the ultimate coding showdown and prove your skills! 🔥
       
 The wait is over! the shadows have cleared, and the official 𝐉’𝐏𝐔𝐑𝐀𝐗𝐓𝐑𝐄𝐌𝐄 𝟐.𝟎 website is 𝐍𝐎𝐖 𝐋𝐈𝐕𝐄! 🌐
 
-Uncover every detail: challenges, registration, and how you can step into the spotlight of the most electrifying hackathon.
+Uncover every detail: challenges, registration, and how you can step into the spotlight of the most electrifying Programming Competition.
 
 The city will soon call its heroes. Are you ready to rise from the dark? 💥
 
@@ -438,7 +503,6 @@ Design and Caption By : Malanka Wickramasinghe
 𝐉’𝐩𝐮𝐫𝐚𝐗𝐭𝐫𝐞𝐦𝐞 𝟐.𝟎 is back!  Bigger, bolder, and darker. 💻
 
 24 Hours. 🕐
-Non-stop hacking. 👨‍💻
 Infinite challenges. 🔥
 Will you rise or fall in the shadows?
  `,
@@ -522,9 +586,9 @@ Will you rise or fall in the shadows?
       type: "sb-event",
       title: "Open For Registration",
       description: `
-      🚀 NIBMCodeX 1.0 | 24-Hour Hackathon
+      🚀 NIBMCodeX 1.0 | 24-Hour Programming Competition
 
-      Get ready to unleash your creativity and coding skills at NIBMCodeX 1.0 – an in-person 24-hour hackathon designed to challenge your limits and inspire innovation! 💡👨‍💻👩‍💻
+      Get ready to unleash your creativity and coding skills at NIBMCodeX 1.0 – an in-person 24-hour Programming Competition designed to challenge your limits and inspire innovation! 💡👨‍💻👩‍💻
 
       ⚠ Note:
         ✅ Open to participants from universities/colleges that do not have an IEEE Student Branch.
@@ -544,7 +608,7 @@ Will you rise or fall in the shadows?
       status: "ongoing",
       image: NIBM_Codex.image1,
       registrations: null,
-      hashtags: ["IEEE","NIBM ","HACKATHON  ","NIBMCodeX1_0 ","Registration ","IEEEXtreme19.0"],
+      hashtags: ["IEEE","NIBM ","NIBMCodeX1_0 ","Registration ","IEEEXtreme19.0"],
       maxCapacity: null,
       tags: ["NIBMCodeX1_0", "IEEEXtreme19.0"],
       branch: "NIBM",
