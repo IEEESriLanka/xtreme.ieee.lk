@@ -15,6 +15,7 @@ import Calendar from "./components/Calendar";
 import registration from "./assets/Events/Registration";
 import Lenis from "lenis";
 import SBEvents from "./components/SbEvents";
+import Diaries from "./components/Diaries";
 
 function App() {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -167,7 +168,7 @@ function App() {
           <Events onEventSelect={handleEventSelect} />
           <SBEvents onEventSelect={handleEventSelect} /> {/* ✅ Student Branch Events */}
           {/* <Calendar events={events} /> */}
-          {/*<PastWinners/>*/}
+          {/* <Diaries/> */}
           <Committee />
           <RulesSection />
           <GuideSection />
