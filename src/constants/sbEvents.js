@@ -15,6 +15,37 @@ import MoraXtreme from "../assets/SB-Events/MoraXtreme";
 
 const sbEvents = [
 
+ {
+      id: 20,
+      type: "sb-event",
+      title: 'Online Awareness Session',
+      description: `
+      🔹🔷 Gear Up with NIBMCodeX 1.0 – Online Awareness Session 🔷🔹
+
+      📢 We are excited to announce our upcoming Online Awareness Session for NIBMCodeX 1.0, aligned with IEEEXtreme 19.0. 
+
+      🔥This session is designed to guide students through the opportunities and challenges of IEEEXtreme – the world’s largest global programming competition.🌏
+
+
+      Join us and take your first step towards an incredible coding journey with IEEEXtreme 19.0 and NIBMCodeX 1.0! 💫
+
+
+ `,
+      buttontext: "Join Session",
+      buttonlink: "https://meet.google.com/gea-cqrw-eyp",
+      date: "03-10-2025",
+      time: "7.30 PM",
+      location: "Online",
+      status: "upcoming",
+      image: NIBM_Codex.image9,
+      registrations: null,
+      hashtags: ['IEEEXtreme 19_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
+      maxCapacity: null,
+      tags: ["NIBMCodeX 1_0 ", "PreXtreme","NIBM"],
+      branch: "NIBM",
+      timeline: [],
+    },
+
   {
       id: 19,
       type: "sb-event",
