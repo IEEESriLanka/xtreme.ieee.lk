@@ -7,6 +7,7 @@ import NIBM_Codex from  "../assets/SB-Events/NIBM_Codex";
 import CINEC_RoadToXtreme from "../assets/SB-Events/CINEC_RoadToXtreme";
 import RuslXtreme from "../assets/SB-Events/RuslXtreme";
 import MoraXtreme from "../assets/SB-Events/MoraXtreme";
+import SLIITXtreme from "../assets/SB-Events/SLIITXtreme";
 
 // published
 // upcoming
@@ -15,8 +16,62 @@ import MoraXtreme from "../assets/SB-Events/MoraXtreme";
 
 const sbEvents = [
 
+    {
+      id: 24,
+      type: "sb-event",
+      title: 'Register Now!',
+      description: `
+      Compete, showcase, and claim your recognition in SLIITXtreme 4.0! 🚀
+
+      Registration is closing soon - don’t miss out!
+
+
+ `,
+      buttontext: "REGISTER NOW",
+      buttonlink: "https://sliitxtreme.ieeesliit.com/",
+      buttontext1: "Get Connected With Us",
+      buttonlink1: "http://bit.ly/m/IEEECSSLIIT",
+      date: "18-10-2025",
+      time: "",
+      location: "Physical",
+      status: "upcoming",
+      image: SLIITXtreme.image2,
+      registrations: null,
+      hashtags: ['IEEEXtreme 19_0' ,"SLIITXtreme4.0", "IEEESLIIT","SLIITXtreme4.0",'IEEE','SESC'],
+      maxCapacity: null,
+      tags: ["SLIITXtreme4.0", "IEEESLIIT","SLIITXtreme4.0"],
+      branch: "SLIIT",
+      timeline: [],
+    },
+
+    {
+      id: 23,
+      type: "sb-event",
+      title: 'Register Now!',
+      description: `
+      🔥The gates are open for the battle! Gather your team and REGISTER NOW to claim your spot in SLIITXtreme 4.0.🏆
+
+
+ `,
+      buttontext: "REGISTER NOW",
+      buttonlink: "https://sliitxtreme.ieeesliit.com/",
+      buttontext1: "Get Connected With Us",
+      buttonlink1: "http://bit.ly/m/IEEECSSLIIT",
+      date: "18-10-2025",
+      time: "",
+      location: "Physical",
+      status: "upcoming",
+      image: SLIITXtreme.image1,
+      registrations: null,
+      hashtags: ['IEEEXtreme 19_0' ,"SLIITXtreme4.0", "IEEESLIIT","SLIITXtreme4.0",'IEEE','SESC'],
+      maxCapacity: null,
+      tags: ["SLIITXtreme4.0", "IEEESLIIT","SLIITXtreme4.0"],
+      branch: "SLIIT",
+      timeline: [],
+    },
+
  {
-      id: 20,
+      id: 22,
       type: "sb-event",
       title: 'Online Awareness Session',
       description: `
@@ -43,6 +98,66 @@ const sbEvents = [
       maxCapacity: null,
       tags: ["NIBMCodeX 1_0 ", "PreXtreme","NIBM"],
       branch: "NIBM",
+      timeline: [],
+    },
+    {
+      id: 21,
+      type: "sb-event",
+      title: 'Official Website Launched',
+      description: `
+      🔥 The wait is OVER! 🔥
+
+The Official Website for Road to Xtreme is now LIVE! 😏💻
+Get ready to sharpen your coding skills, face mind-bending challenges, and gear up for IEEEXtreme 19.0 the 24-hour coding hackathon.
+
+👉 Explore the website and register now: https://roadtoxtreme.netlify.app/
+
+This is your chance to level up, compete, and prove you’ve got what it takes. Don’t just code⚡
+
+
+ `,
+      buttontext: "Register now",
+      buttonlink: "https://roadtoxtreme.netlify.app/",
+      date: "",
+      time: "",
+      location: "",
+      status: "ongoing",
+      image: CINEC_RoadToXtreme.image4,
+      registrations: null,
+      hashtags: ['RoadToXtreme'  ,'IEEEXtreme19','CINECIEEE'],
+      maxCapacity: null,
+      tags: ["RoadToXtreme", "IEEEXtreme19","CINECIEEE"],
+      branch: "USJ",
+      timeline: [],
+    },
+    {
+      id: 20,
+      type: "sb-event",
+      title: 'Registration Open',
+      description: `
+      🔥 Registration for Road to Xtreme 1.0 is officially OPEN!
+
+Your gateway to the global challenge of IEEEXtreme 19.0 starts here.
+Form your team, unlock your potential, and rise above the competition.
+
+⚡ Don’t just participate make your mark.
+
+📝Register here: https://forms.gle/HomK6JQoJqkcrxoE6
+🌐 Learn more: https://roadtoxtreme.netlify.app/
+
+ `,
+      buttontext: "Register now",
+      buttonlink: "https://forms.gle/HomK6JQoJqkcrxoE6",
+      date: "",
+      time: "",
+      location: "",
+      status: "ongoing",
+      image: CINEC_RoadToXtreme.image3,
+      registrations: null,
+      hashtags: ['RoadToXtreme'  ,'IEEEXtreme19','CINECIEEE'],
+      maxCapacity: null,
+      tags: ["RoadToXtreme", "IEEEXtreme19","CINECIEEE"],
+      branch: "USJ",
       timeline: [],
     },
 
