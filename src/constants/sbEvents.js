@@ -21,6 +21,35 @@ const sbEvents = [
       type: "sb-event",
       title: 'Register Now!',
       description: `
+      🔹🔷 Official Website for NIBMCodeX 1.0 is Unlocked! 🔷🔹
+
+    📢 We are thrilled to announce that the official website for NIBMCodeX 1.0 is now live!
+    This is your one-stop hub for everything related to NIBMCodeX 1.0 and IEEEXtreme 19.0. 🌐
+
+    🔥 Explore event details, timelines, and updates while gearing up for the world’s largest 24-hour coding competition.
+
+      Take your first step towards an incredible coding journey with NIBMCodeX 1.0 & IEEEXtreme 19.0! 
+
+ `,
+      buttontext: "Visit Now",
+      buttonlink: "http://nibmcodex.nibmieee.org",
+      date: "",
+      time: "",
+      location: "Physical",
+      status: "upcoming",
+      image: NIBM_Codex.image10,
+      registrations: null,
+      hashtags: ['IEEEXtreme 19_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
+      maxCapacity: null,
+      tags: ["NIBMCodeX 1_0 ", "PreXtreme","NIBM"],
+      branch: "NIBM",
+      timeline: [],
+    },
+    {
+      id: 24,
+      type: "sb-event",
+      title: 'Register Now!',
+      description: `
       Compete, showcase, and claim your recognition in SLIITXtreme 4.0! 🚀
 
       Registration is closing soon - don’t miss out!
