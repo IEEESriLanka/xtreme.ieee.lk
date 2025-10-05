@@ -749,14 +749,14 @@ Join Team Insomniacs, Sri Lanka’s IEEEXtreme Country Rank 1 Team, as they shar
 👩‍💻 Athulya Ratnayake
 
 
- `,buttontext:"REGISTER NOW",buttonlink:"https://forms.gle/u3cwvmQ5vyc5LfUT7",buttontext1:"Get Connected With Us",buttonlink1:"http://bit.ly/m/IEEECSSLIIT",buttonlink:"https://sliitxtreme.ieeesliit.com/",buttontext2:"Join SLIITXtreme",buttonlink2:"https://sliitxtreme.ieeesliit.com/",date:"07-10-2025",time:"7.00 PM",location:"Online",status:"upcoming",image:cr.image3,registrations:null,hashtags:["IEEEXtreme 19_0","SLIITXtreme4.0","IEEESLIIT","SLIITXtreme4.0","IEEE","SESC"],maxCapacity:null,tags:["SLIITXtreme4.0","IEEESLIIT","SLIITXtreme4.0"],branch:"SLIIT",timeline:[]},{id:27,type:"sb-event",title:"Machine Learning in Algorithm Improvement and Problem-Solving.",description:`
+ `,buttontext:"REGISTER NOW",buttonlink:"https://forms.gle/u3cwvmQ5vyc5LfUT7",buttontext1:"Get Connected With Us",buttonlink1:"http://bit.ly/m/IEEECSSLIIT",buttonlink:"https://sliitxtreme.ieeesliit.com/",buttontext2:"Join SLIITXtreme",buttonlink2:"https://sliitxtreme.ieeesliit.com/",date:"10-07-2025",time:"7.00 PM",location:"Online",status:"upcoming",image:cr.image3,registrations:null,hashtags:["IEEEXtreme 19_0","SLIITXtreme4.0","IEEESLIIT","SLIITXtreme4.0","IEEE","SESC"],maxCapacity:null,tags:["SLIITXtreme4.0","IEEESLIIT","SLIITXtreme4.0"],branch:"SLIIT",timeline:[]},{id:27,type:"sb-event",title:"Machine Learning in Algorithm Improvement and Problem-Solving.",description:`
       ⚡ Machine Learning in Algorithm Improvement and Problem-Solving.
 
 We’re excited to have Mr. Vidura Wijekoon, Senior AI/ML Engineer & Line Manager at Virtusa, as he shares his knowledge on Machine Learning in Algorithm Improvement and Problem-Solving 🧠
 
 
 
- `,buttontext:"Register now",buttonlink:"https://roadtoxtreme.netlify.app/",date:"06-10-2025",time:"7.00 PM",location:"",status:"ongoing",image:Sl.image6,registrations:null,hashtags:["RoadToXtreme","IEEEXtreme19","CINECIEEE"],maxCapacity:null,tags:["RoadToXtreme","IEEEXtreme19","CINECIEEE"],branch:"CINEC",timeline:[]},{id:26,type:"sb-event",title:"Competitive Programming & the Importance of DSA",description:`
+ `,buttontext:"Register now",buttonlink:"https://roadtoxtreme.netlify.app/",date:"10-07-2025",time:"7.00 PM",location:"",status:"ongoing",image:Sl.image6,registrations:null,hashtags:["RoadToXtreme","IEEEXtreme19","CINECIEEE"],maxCapacity:null,tags:["RoadToXtreme","IEEEXtreme19","CINECIEEE"],branch:"CINEC",timeline:[]},{id:26,type:"sb-event",title:"Competitive Programming & the Importance of DSA",description:`
        Competitive Programming & the Importance of DSA
 
 We’re excited to have Mr. Thilan Dissanayake, Security Engineer at WSO2, as he shares his knowledge on coding and problem-solving. 🚀
@@ -781,11 +781,11 @@ Be part of Road to Xtreme 1.0 and get ready for IEEEXtreme 19.0!
       Registration is closing soon - don’t miss out!
 
 
- `,buttontext:"REGISTER NOW",buttonlink:"https://sliitxtreme.ieeesliit.com/",buttontext1:"Get Connected With Us",buttonlink1:"http://bit.ly/m/IEEECSSLIIT",date:"18-10-2025",time:"",location:"Physical",status:"upcoming",image:cr.image2,registrations:null,hashtags:["IEEEXtreme 19_0","SLIITXtreme4.0","IEEESLIIT","SLIITXtreme4.0","IEEE","SESC"],maxCapacity:null,tags:["SLIITXtreme4.0","IEEESLIIT","SLIITXtreme4.0"],branch:"SLIIT",timeline:[]},{id:23,type:"sb-event",title:"Register Now!",description:`
+ `,buttontext:"REGISTER NOW",buttonlink:"https://sliitxtreme.ieeesliit.com/",buttontext1:"Get Connected With Us",buttonlink1:"http://bit.ly/m/IEEECSSLIIT",date:"10-18-2025",time:"",location:"Physical",status:"upcoming",image:cr.image2,registrations:null,hashtags:["IEEEXtreme 19_0","SLIITXtreme4.0","IEEESLIIT","SLIITXtreme4.0","IEEE","SESC"],maxCapacity:null,tags:["SLIITXtreme4.0","IEEESLIIT","SLIITXtreme4.0"],branch:"SLIIT",timeline:[]},{id:23,type:"sb-event",title:"Register Now!",description:`
       🔥The gates are open for the battle! Gather your team and REGISTER NOW to claim your spot in SLIITXtreme 4.0.🏆
 
 
- `,buttontext:"REGISTER NOW",buttonlink:"https://sliitxtreme.ieeesliit.com/",buttontext1:"Get Connected With Us",buttonlink1:"http://bit.ly/m/IEEECSSLIIT",date:"18-10-2025",time:"",location:"Physical",status:"upcoming",image:cr.image1,registrations:null,hashtags:["IEEEXtreme 19_0","SLIITXtreme4.0","IEEESLIIT","SLIITXtreme4.0","IEEE","SESC"],maxCapacity:null,tags:["SLIITXtreme4.0","IEEESLIIT","SLIITXtreme4.0"],branch:"SLIIT",timeline:[]},{id:22,type:"sb-event",title:"Online Awareness Session",description:`
+ `,buttontext:"REGISTER NOW",buttonlink:"https://sliitxtreme.ieeesliit.com/",buttontext1:"Get Connected With Us",buttonlink1:"http://bit.ly/m/IEEECSSLIIT",date:"10-18-2025",time:"",location:"Physical",status:"upcoming",image:cr.image1,registrations:null,hashtags:["IEEEXtreme 19_0","SLIITXtreme4.0","IEEESLIIT","SLIITXtreme4.0","IEEE","SESC"],maxCapacity:null,tags:["SLIITXtreme4.0","IEEESLIIT","SLIITXtreme4.0"],branch:"SLIIT",timeline:[]},{id:22,type:"sb-event",title:"Online Awareness Session",description:`
       🔹🔷 Gear Up with NIBMCodeX 1.0 – Online Awareness Session 🔷🔹
 
       📢 We are excited to announce our upcoming Online Awareness Session for NIBMCodeX 1.0, aligned with IEEEXtreme 19.0. 
@@ -796,7 +796,7 @@ Be part of Road to Xtreme 1.0 and get ready for IEEEXtreme 19.0!
       Join us and take your first step towards an incredible coding journey with IEEEXtreme 19.0 and NIBMCodeX 1.0! 💫
 
 
- `,buttontext:"Join Session",buttonlink:"https://meet.google.com/gea-cqrw-eyp",date:"03-10-2025",time:"7.30 PM",location:"Online",status:"upcoming",image:ze.image9,registrations:null,hashtags:["IEEEXtreme 19_0","NIBMCodeX 1_0 ","NIBM","IEEE"],maxCapacity:null,tags:["NIBMCodeX 1_0 ","PreXtreme","NIBM"],branch:"NIBM",timeline:[]},{id:21,type:"sb-event",title:"Official Website Launched",description:`
+ `,buttontext:"Join Session",buttonlink:"https://meet.google.com/gea-cqrw-eyp",date:"10-03-2025",time:"7.30 PM",location:"Online",status:"upcoming",image:ze.image9,registrations:null,hashtags:["IEEEXtreme 19_0","NIBMCodeX 1_0 ","NIBM","IEEE"],maxCapacity:null,tags:["NIBMCodeX 1_0 ","PreXtreme","NIBM"],branch:"NIBM",timeline:[]},{id:21,type:"sb-event",title:"Official Website Launched",description:`
       🔥 The wait is OVER! 🔥
 
 The Official Website for Road to Xtreme is now LIVE! 😏💻
