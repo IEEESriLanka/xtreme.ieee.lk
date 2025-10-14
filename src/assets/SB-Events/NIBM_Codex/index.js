@@ -8,6 +8,7 @@ import image7 from "./image7.jpg";
 import image8 from "./image8.jpg"; 
 import image9 from "./image9.jpg"; 
 import image10 from "./image10.jpg"; 
+import image11 from "./image11.jpg"; 
 
 const NIBM_Codex = {
   image1,
@@ -20,6 +21,7 @@ const NIBM_Codex = {
   image8,                                
   image9,                                
   image10,                                
+  image11,                                
 
 };
 export default NIBM_Codex;

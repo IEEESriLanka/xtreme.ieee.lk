@@ -15,6 +15,36 @@ import SLIITXtreme from "../assets/SB-Events/SLIITXtreme";
 // ongoing
 
 const sbEvents = [
+  {
+    id: 29,
+    type: "sb-event",
+    title: 'Physical Workshop 01',
+    description: `
+    🔹🔷 Gear Up with NIBMCodeX 1.0 | IEEEXtreme 19.0 – Physical Workshop 01 🔷🔹
+
+📢 Join us for the workshop "Problem-Solving Strategies with AI", organized under NIBMCodeX 1.0, aligned with IEEEXtreme 19.0! 🚀
+
+✨ Special Offer: Enjoy a 15% PickMe discount on your ride to ICTA!
+Level up your coding journey with NIBMCodeX 1.0! 💫
+
+`,
+    buttontext: "Visit Now",
+    buttonlink: "http://nibmcodex.nibmieee.org",
+    buttontext1: "Register Now",
+    buttonlink1: "https://forms.gle/jQ6aawWypnGj3gmk9*",
+      
+    date: "",
+    time: "",
+    location: "Physical",
+    status: "upcoming",
+    image: NIBM_Codex.image11,
+    registrations: null,
+    hashtags: ['IEEEXtreme 19_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
+    maxCapacity: null,
+    tags: ["NIBMCodeX 1 _0 ", "IEEEXtreme19","NIBM"],
+    branch: "NIBM",
+    timeline: [],
+  },
       {
       id: 28,
       type: "sb-event",
@@ -35,7 +65,6 @@ Join Team Insomniacs, Sri Lanka’s IEEEXtreme Country Rank 1 Team, as they shar
       buttonlink: "https://forms.gle/u3cwvmQ5vyc5LfUT7",
       buttontext1: "Get Connected With Us",
       buttonlink1: "http://bit.ly/m/IEEECSSLIIT",
-      buttonlink: "https://sliitxtreme.ieeesliit.com/",
       buttontext2: "Join SLIITXtreme",
       buttonlink2: "https://sliitxtreme.ieeesliit.com/",
       date: "10-07-2025",
