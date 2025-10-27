@@ -10,12 +10,8 @@ import Events from "./components/Events";
 import EventDetails from "./components/EventDetails";
 import { TopHeader } from "./components/TopHeader";
 import { StickyNavigation } from "./components/StickyNavigation";
-import PastWinners from "./components/PastWinners";
-import Calendar from "./components/Calendar";
-import registration from "./assets/Events/Registration";
 import Lenis from "lenis";
 import SBEvents from "./components/SbEvents";
-import Diaries from "./components/Diaries";
 
 function App() {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -30,69 +26,12 @@ function App() {
     }
     requestAnimationFrame(raf);
 
-    const style = document.createElement("style");
-    style.textContent = `
-      html {
-        scroll-behavior: smooth;
-      }
-      
-      /* Ensure body can scroll normally as fallback */
-      body {
-        overflow-x: hidden;
-        overflow-y: auto;
-      }
-      
-      /* Custom Blue Gradient Scrollbar */
-      ::-webkit-scrollbar {
-        width: 12px;
-      }
-      
-      ::-webkit-scrollbar-track {
-        background: #f1f5f9;
-        border-radius: 10px;
-      }
-      
-      ::-webkit-scrollbar-thumb {
-        background: linear-gradient(45deg, #3b82f6, #1d4ed8, #0ea5e9);
-        border-radius: 10px;
-        border: 2px solid #f1f5f9;
-        transition: all 0.3s ease;
-      }
-      
-      ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(45deg, #2563eb, #1e40af, #0284c7);
-        border: 2px solid #e2e8f0;
-        box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
-      }
-      
-      ::-webkit-scrollbar-thumb:active {
-        background: linear-gradient(45deg, #1d4ed8, #1e3a8a, #0369a1);
-      }
-      
-      /* Firefox scrollbar */
-      html {
-        scrollbar-width: thin;
-        scrollbar-color: #3b82f6 #f1f5f9;
-      }
-      
-      /* Custom scrollbar for horizontal scroll if needed */
-      ::-webkit-scrollbar:horizontal {
-        height: 12px;
-      }
-      
-      /* Ensure compatibility across browsers */
-      * {
-        box-sizing: border-box;
-      }
-    `;
-    document.head.appendChild(style);
+   
 
     // Cleanup function
     return () => {
       lenis.destroy();
-      if (style.parentNode) {
-        document.head.removeChild(style);
-      }
+     
     };
   }, []);
 

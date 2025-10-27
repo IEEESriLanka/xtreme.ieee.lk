@@ -2,10 +2,116 @@
 import registration from "../assets/Events/Registration";
 import CodeX from "../assets/Events/CodeX";
 import whatsapp from "../assets/Events/Whatsapp";
-
+import conclusion from "../assets/Events/Conclusion";
 
 
   const events = [
+     {
+      id: 7,
+      type: "post",
+      title: "That's a wrap! IEEEXtreme 19.0 Sri Lanka Concludes Successfully",
+      description: `
+     🔥 That's a wrap! 
+IEEEXtreme 19.0 Sri Lanka brought together 1600+ passionate coders from across the island for 24 hours of non-stop problem-solving, teamwork, and excitement! ⚡
+
+A massive thank you to all participants, proctors, and volunteers who made this event a success. 🩵
+
+We can't wait to see you back next year for IEEEXtreme 20.0! 🙌🏼
+
+    `,
+    
+      date: "completed",
+      time: "completed",
+      location: "Virtual",
+      status: "completed",
+      image: conclusion.image1,
+      registrations: null,
+      hashtags: ["IEEE ", "IEEESL ", "CODEX", "IEEEXtreme19"],
+      maxCapacity: "",
+      tags: [],
+      timeline: [],
+    },
+     {
+      id: 6,
+      type: "post",
+      title: "IEEEXtreme 19.0 is officially complete!",
+      description: `
+🎉 IEEEXtreme 19.0 is officially complete! 🎉
+
+What an incredible 24 hours it’s been; full of code, caffeine, and pure determination! Every participant gave their all, pushing their limits and coding non-stop through the challenge. You’ve truly earned a break!
+
+💤 Now it’s time to rest those brilliant minds and recharge; we’ll be back soon with the official results.
+
+Until then, relax and celebrate your hard work; you’ve done something amazing!💪
+
+    `,
+    
+      date: "completed",
+      time: "completed",
+      location: "Virtual",
+      status: "completed",
+      image: conclusion.image2,
+      registrations: null,
+      hashtags: ["IEEE ", "IEEESL ", "CODEX", "IEEEXtreme19"],
+      maxCapacity: "",
+      tags: [],
+      timeline: [],
+    },
+    {
+      id: 5,
+      type: "post",
+      title: "Only 1 Day Left!",
+      description: `
+    ⏳Only 1 Day Left to join the ultimate coding showdown IEEEXtreme! 
+
+🕠 Registrations close tomorrow — don’t miss your shot to code, compete & conquer! 🏆🔥
+
+
+
+    `,
+      buttontext: "Register Now",
+      buttonlink: "http://xtreme.vtools.ieee.org",
+      date: "completed",
+      time: "completed",
+      location: "Virtual",
+      status: "completed",
+      image: conclusion.image3,
+      registrations: null,
+      hashtags: ["IEEE ", "IEEESL ", "CODEX", "IEEEXtreme19"],
+      maxCapacity: "",
+      tags: [],
+      timeline: [],
+    },
+    {
+      id: 5,
+      type: "post",
+      title: "Only 7 Days Left!",
+      description: `
+   ⚡Only 7 Days Left for the ultimate coding marathon — IEEEXtreme 19.0! 
+
+The countdown is on — 24 hours of non-stop problem solving, innovation, and teamwork await!
+
+🗓 25th October 2025
+🕠  5.30am onwards 
+
+Will Sri Lanka make it to the Top 100 once again this year? 🇱🇰🏆
+
+
+
+    `,
+      buttontext: "Register Now",
+      buttonlink: "http://xtreme.vtools.ieee.org",
+      date: "completed",
+      time: "completed",
+      location: "Virtual",
+      status: "completed",
+      image: conclusion.image4,
+      registrations: null,
+      hashtags: ["IEEE ", "IEEESL ", "CODEX", "IEEEXtreme19"],
+      maxCapacity: "",
+      tags: [],
+      timeline: [],
+    },
     {
       id: 4,
       type: "post",
@@ -25,10 +131,10 @@ All your questions and concerns about the competition can be answered here!💬
     `,
       buttontext: "Join Now",
       buttonlink: "https://chat.whatsapp.com/IOcTf27KyXUGTk0R0pvNYW",
-      date: "ongoing",
-      time: "ongoing",
+      date: "completed",
+      time: "completed",
       location: "Virtual",
-      status: "ongoing",
+      status: "completed",
       image: whatsapp.image1,
       registrations: null,
       hashtags: ["IEEE ", "IEEESL ", "CODEX", "IEEEXtreme19"],
@@ -55,10 +161,10 @@ All your questions and concerns about the competition can be answered here!💬
       buttonlink: "https://www.ieee.org/membership/join",
       buttontext2: "Watch Tutorial",
       buttonlink2: "https://www.youtube.com/watch?v=eVQFZ8b68Tg",
-      date: "ongoing",
-      time: "ongoing",
+      date: "completed",
+      time: "completed",
       location: "Virtual",
-      status: "ongoing",
+      status: "completed",
       image: registration.image2,
       registrations: null,
       hashtags: ["IEEE ", "IEEESL ", "CODEX", "IEEEXtreme19"],
@@ -68,7 +174,7 @@ All your questions and concerns about the competition can be answered here!💬
     },
     {
       id: 2,
-      type: "post",
+      type: "workshop",
       title: "CodeX Session Series",
       description: `𝗪𝗼𝗻𝗱𝗲𝗿𝗶𝗻𝗴 𝘄𝗵𝗮𝘁’𝘀 𝗮𝗵𝗲𝗮𝗱? 🧭
 
@@ -82,10 +188,10 @@ Take a look. Lock in your journey. Let’s code our way to victory! 🚀
     `,
       buttontext: "Register Now",
       buttonlink: "https://lu.ma/owts25tf",
-      date: "ongoing",
-      time: "ongoing",
+      date: "completed",
+      time: "completed",
       location: "Virtual",
-      status: "ongoing",
+      status: "completed",
       image: CodeX.image1,
       registrations: 100,
       hashtags: ["IEEE ", "IEEESL ", "CODEX", "IEEEXtreme19", "ICPC2026"],
@@ -120,7 +226,7 @@ Take a look. Lock in your journey. Let’s code our way to victory! 🚀
       date: "2025-10-25",
       time: "00:00 UTC",
       location: "Virtual Global Event",
-      status: "upcoming",
+      status: "completed",
       image: registration.image1,
       registrations: 156,
       hashtags: [

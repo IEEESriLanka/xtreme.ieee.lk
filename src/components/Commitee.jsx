@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import headshots from '../assets/headshots';
 import sriLanka from '../assets/images/sri-lanka.png'
 import placeholderImage from '../assets/images/placeholder.jpg'
@@ -16,43 +16,8 @@ const Committee = () => {
   const leadsRef = useRef(null);
   const ambassadorsRef = useRef(null);
 
-  // Handle image error
-  const handleImageError = (id, type) => {
-    setImageErrors(prev => ({ ...prev, [`${type}-${id}`]: true }));
-  };
-
-  // Get image source with fallback
-  const getImageSrc = (image, id, type) => {
-    if (!image || imageErrors[`${type}-${id}`]) {
-      return placeholderImage;
-    }
-    return image;
-  };
-
-  // Intersection Observer for scroll animations
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.05,
-      rootMargin: '50px 0px -20px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const sectionId = entry.target.getAttribute('data-section');
-          setVisibleSections(prev => ({ ...prev, [sectionId]: true }));
-        }
-      });
-    }, observerOptions);
-
-    if (headerRef.current) observer.observe(headerRef.current);
-    if (leadsRef.current) observer.observe(leadsRef.current);
-    if (ambassadorsRef.current) observer.observe(ambassadorsRef.current);
-
-    return () => observer.disconnect();
-  }, []);
-
-  const eventLeads = [
+  // Memoized data
+  const eventLeads = useMemo(() => [
     {
       id: 1,
       name: "Kavindu Ranasinghe",
@@ -69,9 +34,9 @@ const Committee = () => {
       linkedin: "https://www.linkedin.com/in/ashwinie-jayamanna",
       email: "ashwiniejay@ieee.org"
     }
-  ];
+  ], []);
 
-  const ambassadors = [
+  const ambassadors = useMemo(() => [
     {
       id: 1,
       name: "P. Kaveesha Sewmini",
@@ -219,29 +184,56 @@ const Committee = () => {
       image: headshots.Sanjeewa_UWU,
       linkedin: "https://www.linkedin.com/in/sanjeewa-prabath-liyanage/"
     }
-  ];
+  ], []);
 
+  // Memoized callbacks
+  const handleImageError = useCallback((id, type) => {
+    setImageErrors(prev => ({ ...prev, [`${type}-${id}`]: true }));
+  }, []);
 
+  const getImageSrc = useCallback((image, id, type) => {
+    if (!image || imageErrors[`${type}-${id}`]) {
+      return placeholderImage;
+    }
+    return image;
+  }, [imageErrors]);
+
+  // Optimized Intersection Observer
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.05,
+      rootMargin: '50px 0px -20px 0px'
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.getAttribute('data-section');
+          setVisibleSections(prev => ({ ...prev, [sectionId]: true }));
+          // Stop observing after first intersection for performance
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    const refs = [headerRef, leadsRef, ambassadorsRef];
+    refs.forEach(ref => {
+      if (ref.current) observer.observe(ref.current);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="committee" className="py-16 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-      {/* Animated Background Elements */}
+      {/* Simplified Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-10 w-20 h-20 border border-blue-100 rounded-full opacity-30 animate-pulse"></div>
-        <div className="absolute top-32 right-20 w-16 h-16 bg-blue-50 rounded-full opacity-40 animate-bounce"></div>
+        <div className="absolute top-10 left-10 w-20 h-20 border border-blue-100 rounded-full opacity-30"></div>
+        <div className="absolute top-32 right-20 w-16 h-16 bg-blue-50 rounded-full opacity-40"></div>
         <div className="absolute bottom-20 left-1/4 w-24 h-24 border-2 border-blue-200 rounded-full opacity-20"></div>
-        <div className="absolute bottom-40 right-1/3 w-12 h-12 bg-gradient-to-r from-blue-200 to-cyan-200 rounded-full opacity-30 animate-ping"></div>
-        
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `
-              linear-gradient(to right, #3b82f6 1px, transparent 1px),
-              linear-gradient(to bottom, #3b82f6 1px, transparent 1px)
-            `,
-            backgroundSize: '60px 60px'
-          }}></div>
-        </div>
+        <div className="absolute bottom-40 right-1/3 w-12 h-12 bg-gradient-to-r from-blue-200 to-cyan-200 rounded-full opacity-30"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -256,14 +248,11 @@ const Committee = () => {
           }`}>
             <span className="relative">
               Meet Our Team
-              {/* Animated underline */}
               <div className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full transition-all duration-600 delay-500 ${
                 visibleSections.header ? 'w-24' : 'w-0'
               }`}></div>
-              
-              {/* Floating accent */}
               <div className={`absolute -top-3 -right-3 w-3 h-3 bg-blue-400 rounded-full transition-all duration-600 delay-700 ${
-                visibleSections.header ? 'opacity-60 animate-pulse' : 'opacity-0'
+                visibleSections.header ? 'opacity-60' : 'opacity-0'
               }`}></div>
             </span>
           </h2>
@@ -303,27 +292,18 @@ const Committee = () => {
                 onMouseEnter={() => setHoveredCard(`lead-${lead.id}`)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                {/* Card background gradient on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-transparent to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                {/* Floating particles */}
-                <div className="absolute top-4 right-4 w-2 h-2 bg-blue-300 rounded-full opacity-0 group-hover:opacity-60 group-hover:animate-ping transition-all duration-500"></div>
-                <div className="absolute bottom-4 left-4 w-1.5 h-1.5 bg-cyan-300 rounded-full opacity-0 group-hover:opacity-40 group-hover:animate-bounce transition-all duration-700"></div>
                 
                 <div className="mb-8 relative z-10">
                   <div className="relative inline-block">
                     <img
                       src={getImageSrc(lead.image, lead.id, 'lead')}
                       alt={lead.name}
+                      loading="lazy"
                       className="w-48 h-48 mx-auto rounded-full object-cover border-6 border-blue-100 shadow-lg group-hover:border-blue-200 group-hover:shadow-xl transition-all duration-500 group-hover:scale-105"
                       onError={() => handleImageError(lead.id, 'lead')}
                     />
-                    
-                    {/* Profile ring animation */}
-                    <div className="absolute inset-0 rounded-full border-2 border-blue-400 opacity-0 group-hover:opacity-30 group-hover:animate-spin transition-opacity duration-500" style={{ animationDuration: '4s' }}></div>
-                    
-                    {/* Status indicator */}
-                    <div className="absolute bottom-4 right-4 w-6 h-6 bg-green-500 border-4 border-white rounded-full shadow-lg animate-pulse"></div>
+                    <div className="absolute bottom-4 right-4 w-6 h-6 bg-green-500 border-4 border-white rounded-full shadow-lg"></div>
                   </div>
                 </div>
                 
@@ -334,7 +314,7 @@ const Committee = () => {
                 <div className="flex justify-center space-x-6 relative z-10">
                   <a 
                     href={`mailto:${lead.email}`}
-                    className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-lg group/btn"
+                    className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-lg"
                   >
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
@@ -346,7 +326,7 @@ const Committee = () => {
                     href={lead.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 bg-[#0077B5] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#005582] transition-all duration-300 hover:scale-105 hover:shadow-lg group/btn"
+                    className="flex items-center gap-2 bg-[#0077B5] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#005582] transition-all duration-300 hover:scale-105 hover:shadow-lg"
                   >
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd"></path>
@@ -372,38 +352,17 @@ const Committee = () => {
                 Our Ambassadors
               </h3>
               
-              {/* Enhanced Sri Lankan Flag Image */}
               <div className="relative ml-4">
                 <img 
                   src={sriLanka} 
                   alt="Sri Lankan Flag" 
+                  loading="lazy"
                   className={`w-16 aspect-video object-contain rounded-md shadow-xl border-2 border-white transition-all duration-600 delay-600 ${
                     visibleSections.ambassadors ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
                   }`}
                 />
-                
-                {/* Enhanced Flag glow effect */}
                 <div className={`absolute -inset-2 bg-gradient-to-r from-red-400/40 via-yellow-400/40 to-green-400/40 rounded-lg blur-md transition-all duration-600 delay-700 ${
-                  visibleSections.ambassadors ? 'opacity-100 animate-pulse' : 'opacity-0'
-                }`}></div>
-                
-                {/* Additional shadow for depth */}
-                <div className={`absolute inset-0 bg-gradient-to-br from-red-500/20 to-green-500/20 rounded-md shadow-2xl transition-all duration-600 delay-750 ${
                   visibleSections.ambassadors ? 'opacity-100' : 'opacity-0'
-                }`}></div>
-                
-                {/* Enhanced Sparkle effects */}
-                <div className={`absolute -top-2 -right-2 w-3 h-3 bg-yellow-400 rounded-full transition-all duration-600 delay-800 ${
-                  visibleSections.ambassadors ? 'opacity-90 animate-ping' : 'opacity-0'
-                }`}></div>
-                <div className={`absolute -bottom-2 -left-2 w-2.5 h-2.5 bg-yellow-300 rounded-full transition-all duration-600 delay-900 ${
-                  visibleSections.ambassadors ? 'opacity-80 animate-bounce' : 'opacity-0'
-                }`}></div>
-                <div className={`absolute -top-1 left-1/2 w-2 h-2 bg-red-300 rounded-full transition-all duration-600 delay-600 ${
-                  visibleSections.ambassadors ? 'opacity-70 animate-pulse' : 'opacity-0'
-                }`}></div>
-                <div className={`absolute bottom-0 -right-1 w-1.5 h-1.5 bg-green-300 rounded-full transition-all duration-600 delay-1100 ${
-                  visibleSections.ambassadors ? 'opacity-60 animate-ping' : 'opacity-0'
                 }`}></div>
               </div>
             </div>
@@ -430,10 +389,8 @@ const Committee = () => {
                 onMouseEnter={() => setHoveredCard(`ambassador-${ambassador.id}`)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                {/* Hover background effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-cyan-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
-                {/* University badge */}
                 <div className="absolute top-3 right-3 bg-blue-600 text-white text-xs px-2 py-1 rounded-full font-semibold opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                   {ambassador.university}
                 </div>
@@ -443,16 +400,10 @@ const Committee = () => {
                     <img
                       src={getImageSrc(ambassador.image, ambassador.id, 'ambassador')}
                       alt={ambassador.name}
+                      loading="lazy"
                       className="w-32 h-32 mx-auto rounded-full object-cover border-4 border-blue-200 shadow-lg group-hover:border-blue-300 group-hover:shadow-xl transition-all duration-500 group-hover:scale-110"
                       onError={() => handleImageError(ambassador.id, 'ambassador')}
                     />
-                    
-                    {/* Profile glow */}
-                    <div className="absolute inset-0 rounded-full bg-blue-400/20 opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-500"></div>
-                    
-                    {/* Floating particles */}
-                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-80 group-hover:animate-bounce transition-all duration-500"></div>
-                    <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-blue-300 rounded-full opacity-0 group-hover:opacity-60 group-hover:animate-ping transition-all duration-700"></div>
                   </div>
                 </div>
                 
@@ -464,48 +415,21 @@ const Committee = () => {
                     href={ambassador.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-[#0077B5] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#005582] transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm group/btn"
+                    className="inline-flex items-center gap-2 bg-[#0077B5] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#005582] transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
                   >
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd"></path>
+                      <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd"></path>
                     </svg>
                     Connect
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-600"></div>
                   </a>
                 </div>
 
-                {/* Bottom accent line */}
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
               </div>
             ))}
           </div>
         </div>
       </div>
-
-      {/* CSS for additional animations */}
-      <style jsx>{`
-        @keyframes slideInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        @keyframes fadeInScale {
-          from {
-            opacity: 0;
-            transform: scale(0.9);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-      `}</style>
     </section>
   );
 };

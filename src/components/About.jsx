@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
-import rulesImg from "../assets/images/Rules.jpeg";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { Code, Zap, Trophy, Users } from "lucide-react";
 
 const About = () => {
@@ -12,31 +11,40 @@ const About = () => {
   const aboutRef = useRef(null);
   const whyRef = useRef(null);
   const eligibleRef = useRef(null);
+  const observerRef = useRef(null);
 
-  // Intersection Observer for scroll animations
+  // Intersection Observer for scroll animations - optimized
   useEffect(() => {
     const observerOptions = {
-      threshold: 0.2,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: 0.15,
+      rootMargin: '0px 0px -30px 0px'
     };
 
-    const observer = new IntersectionObserver((entries) => {
+    observerRef.current = new IntersectionObserver((entries) => {
+      const updates = {};
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const sectionId = entry.target.getAttribute('data-section');
-          setVisibleSections(prev => ({ ...prev, [sectionId]: true }));
+          updates[sectionId] = true;
         }
       });
+      
+      if (Object.keys(updates).length > 0) {
+        setVisibleSections(prev => ({ ...prev, ...updates }));
+      }
     }, observerOptions);
 
-    if (aboutRef.current) observer.observe(aboutRef.current);
-    if (whyRef.current) observer.observe(whyRef.current);
-    if (eligibleRef.current) observer.observe(eligibleRef.current);
+    const refs = [aboutRef.current, whyRef.current, eligibleRef.current].filter(Boolean);
+    refs.forEach(ref => observerRef.current.observe(ref));
 
-    return () => observer.disconnect();
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
   }, []);
 
-  const benefits = [
+  const benefits = useMemo(() => [
     {
       icon: Code,
       title: "Boost Your Skills",
@@ -69,14 +77,14 @@ const About = () => {
       delay: 600,
       gradient: "from-green-500 to-teal-600"
     }
-  ];
+  ], []);
 
-  const stats = [
+  const stats = useMemo(() => [
     { number: "150+", label: "Countries Participate", delay: 800 },
     { number: "24", label: "Hours of Coding", delay: 1000 },
     { number: "30+", label: "Challenging Problems", delay: 1200 },
     { number: "10K+", label: "Global Participants", delay: 1400 }
-  ];
+  ], []);
 
   return (
     <section id="about">
@@ -86,11 +94,11 @@ const About = () => {
       <div 
         ref={whyRef}
         data-section="why"
-        className="bg-gradient-to-br from-gray-50 via-white to-blue-50/30 py-20 px-4 sm:px-8 lg:px-32 relative overflow-hidden" 
+        className="bg-gradient-to-br from-gray-50 via-white to-blue-50/30 py-20 px-4 sm:px-8 lg:px-32 relative overflow-hidden will-change-transform" 
         id="why"
       >
         {/* Enhanced background pattern */}
-        <div className="absolute inset-0 opacity-[0.03]">
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 25% 25%, #3b82f6 2px, transparent 2px),
                              radial-gradient(circle at 75% 75%, #8b5cf6 1px, transparent 1px)`,
@@ -99,9 +107,9 @@ const About = () => {
         </div>
 
         {/* Floating geometric shapes */}
-        <div className="absolute top-20 left-10 w-16 h-16 border-2 border-blue-200 rounded-full opacity-20 animate-bounce" style={{animationDuration: '3s'}}></div>
-        <div className="absolute bottom-32 right-16 w-12 h-12 bg-blue-100 rotate-45 opacity-30 animate-pulse"></div>
-        <div className="absolute top-1/2 right-10 w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full opacity-20 animate-ping" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-20 left-10 w-16 h-16 border-2 border-blue-200 rounded-full opacity-20 pointer-events-none" style={{animation: 'float 3s ease-in-out infinite'}}></div>
+        <div className="absolute bottom-32 right-16 w-12 h-12 bg-blue-100 rotate-45 opacity-30 pointer-events-none" style={{animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'}}></div>
+        <div className="absolute top-1/2 right-10 w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full opacity-20 pointer-events-none" style={{animation: 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite', animationDelay: '1s'}}></div>
 
         <div className="max-w-7xl mx-auto text-center relative z-10">
           {/* Enhanced header */}
@@ -115,8 +123,8 @@ const About = () => {
                 WHY PARTICIPATE?
                 {/* Pulsing accent */}
                 <div className={`absolute -top-3 -right-3 w-4 h-4 bg-blue-500 rounded-full transition-all duration-1000 delay-500 ${
-                  visibleSections.why ? 'opacity-60 animate-pulse' : 'opacity-0'
-                }`}></div>
+                  visibleSections.why ? 'opacity-60' : 'opacity-0'
+                }`} style={{animation: visibleSections.why ? 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite' : 'none'}}></div>
                 {/* Gradient underline */}
                 <div className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 rounded-full transition-all duration-1000 delay-300 ${
                   visibleSections.why ? 'w-32' : 'w-0'
@@ -296,9 +304,9 @@ const About = () => {
         </div>
 
         {/* Background decorative elements */}
-        <div className="absolute top-1/2 left-10 w-20 h-20 border border-blue-100 rounded-full opacity-30"></div>
-        <div className="absolute bottom-10 right-10 w-16 h-16 border border-blue-200 rounded-full opacity-20"></div>
-        <div className="absolute top-20 right-1/4 w-2 h-2 bg-blue-300 rounded-full animate-pulse opacity-40"></div>
+        <div className="absolute top-1/2 left-10 w-20 h-20 border border-blue-100 rounded-full opacity-30 pointer-events-none"></div>
+        <div className="absolute bottom-10 right-10 w-16 h-16 border border-blue-200 rounded-full opacity-20 pointer-events-none"></div>
+        <div className="absolute top-20 right-1/4 w-2 h-2 bg-blue-300 rounded-full opacity-40 pointer-events-none" style={{animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'}}></div>
       </div>
 
       {/* CSS for additional animations */}
@@ -322,6 +330,31 @@ const About = () => {
           to {
             opacity: 1;
             transform: translateY(0);
+          }
+        }
+        
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+        
+        @keyframes pulse {
+          0%, 100% {
+            opacity: 0.3;
+          }
+          50% {
+            opacity: 0.5;
+          }
+        }
+        
+        @keyframes ping {
+          75%, 100% {
+            transform: scale(1.5);
+            opacity: 0;
           }
         }
       `}</style>
