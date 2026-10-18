@@ -51,7 +51,7 @@ const GuideSection = () => {
             Participating in IEEEXtreme is a valuable experience that offers a
             unique blend of learning, collaboration, and competition. Whether
             you're aiming to enhance your coding abilities, gain international
-            exposure, or simply enjoy the thrill of competition, IEEEXtreme 19.0
+            exposure, or simply enjoy the thrill of competition, IEEEXtreme 20.0
             is the event for you!
           </p>
 

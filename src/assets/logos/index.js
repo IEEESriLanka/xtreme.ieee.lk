@@ -1,6 +1,7 @@
-import ieeextremelogo from './IEEEXtreme19.0.webp'
-
 const logos = {
-    ieeextremelogo
-}
+  ieeextremelogo: '/IEEEXtreme 20.0 Color Logo.png',
+  black: '/IEEEXtreme 20.0 Black Logo.png',
+  white: '/IEEEXtreme 20.0 White Logo.png',
+};
+
 export default logos;

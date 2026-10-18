@@ -1,272 +1,133 @@
-  
-import registration from "../assets/Events/Registration";
-import CodeX from "../assets/Events/CodeX";
-import whatsapp from "../assets/Events/Whatsapp";
-import conclusion from "../assets/Events/Conclusion";
+// Captions supplied in public/Flyers/captions.txt; newest countdown first.
+const events = [
+  {
+    "id": 3,
+    "type": "post",
+    "title": "1 Day to Go!",
+    "description": `𝟏 𝐃𝐀𝐘 𝐓𝐎 𝐆𝐎! ⏳
 
+The final countdown is here! Only 1 day left to register for 𝐈𝐄𝐄𝐄𝐗𝐭𝐫𝐞𝐦𝐞 𝟐𝟎.𝟎 - the ultimate 24-hour global programming challenge! 🌍
 
-  const events = [
-     {
-      id: 7,
-      type: "post",
-      title: "That's a wrap! IEEEXtreme 19.0 Sri Lanka Concludes Successfully",
-      description: `
-     🔥 That's a wrap! 
-IEEEXtreme 19.0 Sri Lanka brought together 1600+ passionate coders from across the island for 24 hours of non-stop problem-solving, teamwork, and excitement! ⚡
+This is your last chance to gather your team, take on the challenge, and showcase your coding skills on the global stage! ⚡
 
-A massive thank you to all participants, proctors, and volunteers who made this event a success. 🩵
+📅 𝐑𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐭𝐢𝐨𝐧 𝐃𝐞𝐚𝐝𝐥𝐢𝐧𝐞: 17th October 2026
 
-We can't wait to see you back next year for IEEEXtreme 20.0! 🙌🏼
+🔗 𝐑𝐞𝐠𝐢𝐬𝐭𝐞𝐫 𝐍𝐨𝐰:
+xtreme.vtools.ieee.org
 
-    `,
-    
-      date: "completed",
-      time: "completed",
-      location: "Virtual",
-      status: "completed",
-      image: conclusion.image1,
-      registrations: null,
-      hashtags: ["IEEE ", "IEEESL ", "CODEX", "IEEEXtreme19"],
-      maxCapacity: "",
-      tags: [],
-      timeline: [],
-    },
-     {
-      id: 6,
-      type: "post",
-      title: "IEEEXtreme 19.0 is officially complete!",
-      description: `
-🎉 IEEEXtreme 19.0 is officially complete! 🎉
+💡 𝑻𝒉𝒆 𝒄𝒍𝒐𝒄𝒌 𝒊𝒔 𝒕𝒊𝒄𝒌𝒊𝒏𝒈 - 𝒓𝒆𝒈𝒊𝒔𝒕𝒆𝒓 𝒚𝒐𝒖𝒓 𝒕𝒆𝒂𝒎 𝒃𝒆𝒇𝒐𝒓𝒆 𝒊𝒕’𝒔 𝒕𝒐𝒐 𝒍𝒂𝒕𝒆!
 
-What an incredible 24 hours it’s been; full of code, caffeine, and pure determination! Every participant gave their all, pushing their limits and coding non-stop through the challenge. You’ve truly earned a break!
+#IEEE
+#IEEESL
+#IEEEXtreme20`,
+    "date": "2026-10-17",
+    "time": "Registration deadline",
+    "location": "Virtual",
+    "status": "completed",
+    "image": "/Flyers/1 day Xtreme.png",
+    "registrations": null,
+    "hashtags": [],
+    "maxCapacity": "",
+    "tags": [],
+    "timeline": []
+  },
+  {
+    "id": 2,
+    "type": "post",
+    "title": "3 Days to Go!",
+    "description": `𝟑 𝐃𝐀𝐘𝐒 𝐓𝐎 𝐆𝐎! ⏳
 
-💤 Now it’s time to rest those brilliant minds and recharge; we’ll be back soon with the official results.
+Time is running out! Only 3 days left to register for 𝐈𝐄𝐄𝐄𝐗𝐭𝐫𝐞𝐦𝐞 𝟐𝟎.𝟎 - the ultimate 24-hour global programming challenge! 🌍
 
-Until then, relax and celebrate your hard work; you’ve done something amazing!💪
+Gather your team, gear up for the challenge, and get ready to showcase your coding skills on the global stage! ⚡
 
-    `,
-    
-      date: "completed",
-      time: "completed",
-      location: "Virtual",
-      status: "completed",
-      image: conclusion.image2,
-      registrations: null,
-      hashtags: ["IEEE ", "IEEESL ", "CODEX", "IEEEXtreme19"],
-      maxCapacity: "",
-      tags: [],
-      timeline: [],
-    },
-    {
-      id: 5,
-      type: "post",
-      title: "Only 1 Day Left!",
-      description: `
-    ⏳Only 1 Day Left to join the ultimate coding showdown IEEEXtreme! 
+📅 𝐑𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐭𝐢𝐨𝐧 𝐃𝐞𝐚𝐝𝐥𝐢𝐧𝐞: 17th October 2026
 
-🕠 Registrations close tomorrow — don’t miss your shot to code, compete & conquer! 🏆🔥
+🔗 𝐑𝐞𝐠𝐢𝐬𝐭𝐞𝐫 𝐍𝐨𝐰:
+xtreme.vtools.ieee.org
 
+💡 𝑫𝒐𝒏’𝒕 𝒘𝒂𝒊𝒕 𝒖𝒏𝒕𝒊𝒍 𝒕𝒉𝒆 𝒍𝒂𝒔𝒕 𝒎𝒊𝒏𝒖𝒕𝒆 – 𝒍𝒐𝒄𝒌 𝒊𝒏 𝒚𝒐𝒖𝒓 𝒕𝒆𝒂𝒎’𝒔 𝒔𝒑𝒐𝒕 𝒏𝒐𝒘!
 
+#IEEE
+#IEEESL
+#IEEEXtreme20`,
+    "date": "2026-10-17",
+    "time": "Registration deadline",
+    "location": "Virtual",
+    "status": "completed",
+    "image": "/Flyers/3Day Xtreme.png",
+    "registrations": null,
+    "hashtags": [],
+    "maxCapacity": "",
+    "tags": [],
+    "timeline": []
+  },
+  {
+    "id": 1,
+    "type": "post",
+    "title": "5 Days to Go!",
+    "description": `𝟓 𝐃𝐀𝐘𝐒 𝐓𝐎 𝐆𝐎!⏳
 
-    `,
-      buttontext: "Register Now",
-      buttonlink: "http://xtreme.vtools.ieee.org",
-      date: "completed",
-      time: "completed",
-      location: "Virtual",
-      status: "completed",
-      image: conclusion.image3,
-      registrations: null,
-      hashtags: ["IEEE ", "IEEESL ", "CODEX", "IEEEXtreme19"],
-      maxCapacity: "",
-      tags: [],
-      timeline: [],
-    },
-    {
-      id: 5,
-      type: "post",
-      title: "Only 7 Days Left!",
-      description: `
-   ⚡Only 7 Days Left for the ultimate coding marathon — IEEEXtreme 19.0! 
+The countdown is on! Don’t miss your chance to be part of 𝐈𝐄𝐄𝐄𝐗𝐭𝐫𝐞𝐦𝐞 𝟐𝟎.𝟎 - the ultimate 24-hour global programming challenge! 🌍
 
-The countdown is on — 24 hours of non-stop problem solving, innovation, and teamwork await!
+Gather your team, sharpen your problem-solving skills, and get ready to push your limits on a global stage! ⚡
 
-🗓 25th October 2025
-🕠  5.30am onwards 
+📅 𝐑𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐭𝐢𝐨𝐧 𝐃𝐞𝐚𝐝𝐥𝐢𝐧𝐞: 17th October 2026
 
-Will Sri Lanka make it to the Top 100 once again this year? 🇱🇰🏆
+🔗  𝐑𝐞𝐠𝐢𝐬𝐭𝐞𝐫 𝐍𝐨𝐰:
+xtreme.vtools.ieee.org
 
+💡 𝑆𝑒𝑐𝑢𝑟𝑒 𝑦𝑜𝑢𝑟 𝑡𝑒𝑎𝑚’𝑠 𝑠𝑝𝑜𝑡 𝑏𝑒𝑓𝑜𝑟𝑒 𝑡𝑖𝑚𝑒 𝑟𝑢𝑛𝑠 𝑜𝑢𝑡!
 
+#IEEE
+#IEEESL
+#IEEEXtreme20`,
+    "date": "2026-10-17",
+    "time": "Registration deadline",
+    "location": "Virtual",
+    "status": "completed",
+    "image": "/Flyers/5 day.png",
+    "registrations": null,
+    "hashtags": [],
+    "maxCapacity": "",
+    "tags": [],
+    "timeline": []
+  },
+  {
+    "id": 4,
+    "type": "post",
+    "title": "Join the Official WhatsApp Q&A Group!",
+    "description": `𝗧𝗵𝗲 𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 𝗤&𝗔 𝗚𝗿𝗼𝘂𝗽 𝗳𝗼𝗿 𝘁𝗵𝗲 𝗜𝗘𝗘𝗘𝗫𝘁𝗿𝗲𝗺𝗲 𝗦𝗿𝗶 𝗟𝗮𝗻𝗸𝗮 𝗦𝗲𝗰𝘁𝗶𝗼𝗻 𝗶𝘀 𝗡𝗼𝘄 𝗢𝗣𝗘𝗡!🚀
 
-    `,
-      buttontext: "Register Now",
-      buttonlink: "http://xtreme.vtools.ieee.org",
-      date: "completed",
-      time: "completed",
-      location: "Virtual",
-      status: "completed",
-      image: conclusion.image4,
-      registrations: null,
-      hashtags: ["IEEE ", "IEEESL ", "CODEX", "IEEEXtreme19"],
-      maxCapacity: "",
-      tags: [],
-      timeline: [],
-    },
-    {
-      id: 4,
-      type: "post",
-      title: "Join Us On WhatsApp!",
-      description: `
-      🔰The official WhatsApp Q&A Group for 𝗜𝗘𝗘𝗘𝗫𝘁𝗿𝗲𝗺𝗲 𝗦𝗿𝗶 𝗟𝗮𝗻𝗸𝗮 𝗦𝗲𝗰𝘁𝗶𝗼𝗻 is now 𝗢𝗣𝗘𝗡!
+𝑯𝒂𝒗𝒆 𝒒𝒖𝒆𝒔𝒕𝒊𝒐𝒏𝒔, 𝒅𝒐𝒖𝒃𝒕𝒔, 𝒐𝒓 𝒄𝒐𝒏𝒄𝒆𝒓𝒏𝒔 𝒓𝒆𝒈𝒂𝒓𝒅𝒊𝒏𝒈 𝑰𝑬𝑬𝑬𝑿𝒕𝒓𝒆𝒎𝒆? 💬
 
-All your questions and concerns about the competition can be answered here!💬
+Join the official Q&A group to connect with fellow participants and get your questions answered!
 
-📍Join now and be part of the community.
+📍 Join now and stay connected with the IEEEXtreme Sri Lanka community.
 
-               or
+🔗 https://chat.whatsapp.com/IOcTf27KyXUGTk0R0pvNYW
 
-𝘚𝘤𝘢𝘯 𝘵𝘩𝘦 𝘘𝘙 𝘤𝘰𝘥𝘦 𝘵𝘰 𝘫𝘰𝘪𝘯.
+or
 
+📲 Scan the QR code to join.
 
-    `,
-      buttontext: "Join Now",
-      buttonlink: "https://chat.whatsapp.com/IOcTf27KyXUGTk0R0pvNYW",
-      date: "completed",
-      time: "completed",
-      location: "Virtual",
-      status: "completed",
-      image: whatsapp.image1,
-      registrations: null,
-      hashtags: ["IEEE ", "IEEESL ", "CODEX", "IEEEXtreme19"],
-      maxCapacity: "",
-      tags: [],
-      timeline: [],
-    },
-    {
-      id: 3,
-      type: "post",
-      title: "Get Your IEEE Student Membership Today",
-      description: `
-      Compete in IEEEXtreme for Just $7!
+#IEEE
+#IEEESL
+#XtremeDiaries
+#IEEEXtreme20`,
+    "date": "Community Q&A",
+    "time": "",
+    "location": "Virtual",
+    "status": "published",
+    "image": "/Flyers/Whatsapp Final.png",
+    "buttontext": "Join Now",
+    "buttonlink": "https://chat.whatsapp.com/IOcTf27KyXUGTk0R0pvNYW",
+    "registrations": null,
+    "hashtags": [],
+    "maxCapacity": "",
+    "tags": [],
+    "timeline": []
+  }
+];
 
-      Get Your IEEE Student Membership Today
-      Join IEEE for only $7 and unlock your chance to participate in IEEEXtreme, the world’s biggest 24-hour programming competition.
-
-      🌍 Connect with tech enthusiasts worldwide
-      🏆 Compete for global rankings and prizes
-      📚 Access exclusive IEEE resources
-
-    `,
-      buttontext: "Sign Up Now",
-      buttonlink: "https://www.ieee.org/membership/join",
-      buttontext2: "Watch Tutorial",
-      buttonlink2: "https://www.youtube.com/watch?v=eVQFZ8b68Tg",
-      date: "completed",
-      time: "completed",
-      location: "Virtual",
-      status: "completed",
-      image: registration.image2,
-      registrations: null,
-      hashtags: ["IEEE ", "IEEESL ", "CODEX", "IEEEXtreme19"],
-      maxCapacity: "",
-      tags: [],
-      timeline: [],
-    },
-    {
-      id: 2,
-      type: "workshop",
-      title: "CodeX Session Series",
-      description: `𝗪𝗼𝗻𝗱𝗲𝗿𝗶𝗻𝗴 𝘄𝗵𝗮𝘁’𝘀 𝗮𝗵𝗲𝗮𝗱? 🧭
-
-Here’s your complete roadmap to mastering the world of competitive programming with CodeX! 📍
-
-From algorithms to advanced strategies, each week is carefully designed to sharpen your skills, challenge your thinking, and prepare you for the real battles ahead.
-
-And yes, you’ll have TWO sessions every week to double the impact. 💥
-
-Take a look. Lock in your journey. Let’s code our way to victory! 🚀
-    `,
-      buttontext: "Register Now",
-      buttonlink: "https://lu.ma/owts25tf",
-      date: "completed",
-      time: "completed",
-      location: "Virtual",
-      status: "completed",
-      image: CodeX.image1,
-      registrations: 100,
-      hashtags: ["IEEE ", "IEEESL ", "CODEX", "IEEEXtreme19", "ICPC2026"],
-      maxCapacity: "",
-      tags: ["Competitive Programming", "Algorithms"],
-      timeline: [],
-    },
-    {
-      id: 1,
-      type: "post",
-      title: " IEEEXtreme 19.0 is here!",
-      description: `🌐 The Ultimate 24-Hour Global Coding Challenge
-
-    📅 Date: 25 October 2025
-    🕛 Starts at: 00:00 UTC (GMT+5:30)
-
-    ⚡ Are you ready to code without limits?
-
-    Team up. Compete. Conquer. From anywhere in the world.
-
-    ✅ Open to all IEEE student members
-    👨‍💻 Solve real-world challenges
-    🏆 Compete globally and win exciting prizes
-
-    🎯 Registrations are NOW OPEN!
-
-    📢 Don’t miss your chance to be part of history.
-
-    `,
-      buttontext: "Register Now",
-      buttonlink: "https://xtreme.vtools.ieee.org/",
-      date: "2025-10-25",
-      time: "00:00 UTC",
-      location: "Virtual Global Event",
-      status: "completed",
-      image: registration.image1,
-      registrations: 156,
-      hashtags: [
-        "IEEEXtreme19 ",
-        "CodeTheXtreme ",
-        "GlobalHackathon",
-        "IEEEStudents",
-        "RegisterNow",
-        "24HourCodingChallenge",
-      ],
-      maxCapacity: "",
-      tags: ["Problem Solving", "Competitive Programming", "Global"],
-      timeline: [
-        {
-          time: "00:00 UTC",
-          title: "Competition Starts",
-          desc: "Teams begin working on programming challenges worldwide",
-        },
-        {
-          time: "06:00 UTC",
-          title: "First Checkpoint",
-          desc: "Leaderboard updates and progress assessment",
-        },
-        {
-          time: "12:00 UTC",
-          title: "Midpoint Review",
-          desc: "Halfway through the competition - time for strategy adjustments",
-        },
-        {
-          time: "18:00 UTC",
-          title: "Final Sprint",
-          desc: "Last 6 hours - teams push for final solutions",
-        },
-        {
-          time: "23:59 UTC",
-          title: "Competition Ends",
-          desc: "Submission deadline and final leaderboard calculations",
-        },
-      ],
-    },
-  ];
-
-  export default events
+export default events;
