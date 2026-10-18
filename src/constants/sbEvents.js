@@ -20,9 +20,9 @@ const sbEvents = [
     type: "sb-event",
     title: 'Physical Workshop 01',
     description: `
-    🔹🔷 Gear Up with NIBMCodeX 1.0 | IEEEXtreme 19.0 – Physical Workshop 01 🔷🔹
+    🔹🔷 Gear Up with NIBMCodeX 1.0 | IEEEXtreme 20.0 – Physical Workshop 01 🔷🔹
 
-📢 Join us for the workshop "Problem-Solving Strategies with AI", organized under NIBMCodeX 1.0, aligned with IEEEXtreme 19.0! 🚀
+📢 Join us for the workshop "Problem-Solving Strategies with AI", organized under NIBMCodeX 1.0, aligned with IEEEXtreme 20.0! 🚀
 
 ✨ Special Offer: Enjoy a 15% PickMe discount on your ride to ICTA!
 Level up your coding journey with NIBMCodeX 1.0! 💫
@@ -39,9 +39,9 @@ Level up your coding journey with NIBMCodeX 1.0! 💫
     status: "upcoming",
     image: NIBM_Codex.image11,
     registrations: null,
-    hashtags: ['IEEEXtreme 19_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
+    hashtags: ['IEEEXtreme 20_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
     maxCapacity: null,
-    tags: ["NIBMCodeX 1 _0 ", "IEEEXtreme19","NIBM"],
+    tags: ["NIBMCodeX 1 _0 ", "IEEEXtreme20","NIBM"],
     branch: "NIBM",
     timeline: [],
   },
@@ -73,7 +73,7 @@ Join Team Insomniacs, Sri Lanka’s IEEEXtreme Country Rank 1 Team, as they shar
       status: "upcoming",
       image: SLIITXtreme.image3,
       registrations: null,
-      hashtags: ['IEEEXtreme 19_0' ,"SLIITXtreme4.0", "IEEESLIIT","SLIITXtreme4.0",'IEEE','SESC'],
+      hashtags: ['IEEEXtreme 20_0' ,"SLIITXtreme4.0", "IEEESLIIT","SLIITXtreme4.0",'IEEE','SESC'],
       maxCapacity: null,
       tags: ["SLIITXtreme4.0", "IEEESLIIT","SLIITXtreme4.0"],
       branch: "SLIIT",
@@ -100,9 +100,9 @@ We’re excited to have Mr. Vidura Wijekoon, Senior AI/ML Engineer & Line Manage
       status: "ongoing",  
       image: CINEC_RoadToXtreme.image6,
       registrations: null,
-      hashtags: ['RoadToXtreme'  ,'IEEEXtreme19','CINECIEEE'],
+      hashtags: ['RoadToXtreme'  ,'IEEEXtreme20','CINECIEEE'],
       maxCapacity: null,
-      tags: ["RoadToXtreme", "IEEEXtreme19","CINECIEEE"],
+      tags: ["RoadToXtreme", "IEEEXtreme20","CINECIEEE"],
       branch: "CINEC",
       timeline: [],
     },
@@ -116,7 +116,7 @@ We’re excited to have Mr. Vidura Wijekoon, Senior AI/ML Engineer & Line Manage
 
 We’re excited to have Mr. Thilan Dissanayake, Security Engineer at WSO2, as he shares his knowledge on coding and problem-solving. 🚀
 
-Be part of Road to Xtreme 1.0 and get ready for IEEEXtreme 19.0!
+Be part of Road to Xtreme 1.0 and get ready for IEEEXtreme 20.0!
 
 
 
@@ -129,9 +129,9 @@ Be part of Road to Xtreme 1.0 and get ready for IEEEXtreme 19.0!
       status: "ongoing",
       image: CINEC_RoadToXtreme.image5,
       registrations: null,
-      hashtags: ['RoadToXtreme'  ,'IEEEXtreme19','CINECIEEE'],
+      hashtags: ['RoadToXtreme'  ,'IEEEXtreme20','CINECIEEE'],
       maxCapacity: null,
-      tags: ["RoadToXtreme", "IEEEXtreme19","CINECIEEE"],
+      tags: ["RoadToXtreme", "IEEEXtreme20","CINECIEEE"],
       branch: "CINEC",
       timeline: [],
     },
@@ -144,11 +144,11 @@ Be part of Road to Xtreme 1.0 and get ready for IEEEXtreme 19.0!
       🔹🔷 Official Website for NIBMCodeX 1.0 is Unlocked! 🔷🔹
 
     📢 We are thrilled to announce that the official website for NIBMCodeX 1.0 is now live!
-    This is your one-stop hub for everything related to NIBMCodeX 1.0 and IEEEXtreme 19.0. 🌐
+    This is your one-stop hub for everything related to NIBMCodeX 1.0 and IEEEXtreme 20.0. 🌐
 
     🔥 Explore event details, timelines, and updates while gearing up for the world’s largest 24-hour coding competition.
 
-      Take your first step towards an incredible coding journey with NIBMCodeX 1.0 & IEEEXtreme 19.0! 
+      Take your first step towards an incredible coding journey with NIBMCodeX 1.0 & IEEEXtreme 20.0!
 
  `,
       buttontext: "Visit Now",
@@ -159,7 +159,7 @@ Be part of Road to Xtreme 1.0 and get ready for IEEEXtreme 19.0!
       status: "upcoming",
       image: NIBM_Codex.image10,
       registrations: null,
-      hashtags: ['IEEEXtreme 19_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
+      hashtags: ['IEEEXtreme 20_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
       maxCapacity: null,
       tags: ["NIBMCodeX 1_0 ", "PreXtreme","NIBM"],
       branch: "NIBM",
@@ -186,7 +186,7 @@ Be part of Road to Xtreme 1.0 and get ready for IEEEXtreme 19.0!
       status: "upcoming",
       image: SLIITXtreme.image2,
       registrations: null,
-      hashtags: ['IEEEXtreme 19_0' ,"SLIITXtreme4.0", "IEEESLIIT","SLIITXtreme4.0",'IEEE','SESC'],
+      hashtags: ['IEEEXtreme 20_0' ,"SLIITXtreme4.0", "IEEESLIIT","SLIITXtreme4.0",'IEEE','SESC'],
       maxCapacity: null,
       tags: ["SLIITXtreme4.0", "IEEESLIIT","SLIITXtreme4.0"],
       branch: "SLIIT",
@@ -212,7 +212,7 @@ Be part of Road to Xtreme 1.0 and get ready for IEEEXtreme 19.0!
       status: "upcoming",
       image: SLIITXtreme.image1,
       registrations: null,
-      hashtags: ['IEEEXtreme 19_0' ,"SLIITXtreme4.0", "IEEESLIIT","SLIITXtreme4.0",'IEEE','SESC'],
+      hashtags: ['IEEEXtreme 20_0' ,"SLIITXtreme4.0", "IEEESLIIT","SLIITXtreme4.0",'IEEE','SESC'],
       maxCapacity: null,
       tags: ["SLIITXtreme4.0", "IEEESLIIT","SLIITXtreme4.0"],
       branch: "SLIIT",
@@ -226,12 +226,12 @@ Be part of Road to Xtreme 1.0 and get ready for IEEEXtreme 19.0!
       description: `
       🔹🔷 Gear Up with NIBMCodeX 1.0 – Online Awareness Session 🔷🔹
 
-      📢 We are excited to announce our upcoming Online Awareness Session for NIBMCodeX 1.0, aligned with IEEEXtreme 19.0. 
+      📢 We are excited to announce our upcoming Online Awareness Session for NIBMCodeX 1.0, aligned with IEEEXtreme 20.0.
 
       🔥This session is designed to guide students through the opportunities and challenges of IEEEXtreme – the world’s largest global programming competition.🌏
 
 
-      Join us and take your first step towards an incredible coding journey with IEEEXtreme 19.0 and NIBMCodeX 1.0! 💫
+      Join us and take your first step towards an incredible coding journey with IEEEXtreme 20.0 and NIBMCodeX 1.0! 💫
 
 
  `,
@@ -243,7 +243,7 @@ Be part of Road to Xtreme 1.0 and get ready for IEEEXtreme 19.0!
       status: "upcoming",
       image: NIBM_Codex.image9,
       registrations: null,
-      hashtags: ['IEEEXtreme 19_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
+      hashtags: ['IEEEXtreme 20_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
       maxCapacity: null,
       tags: ["NIBMCodeX 1_0 ", "PreXtreme","NIBM"],
       branch: "NIBM",
@@ -258,7 +258,7 @@ Be part of Road to Xtreme 1.0 and get ready for IEEEXtreme 19.0!
       🔥 The wait is OVER! 🔥
 
 The Official Website for Road to Xtreme is now LIVE! 😏💻
-Get ready to sharpen your coding skills, face mind-bending challenges, and gear up for IEEEXtreme 19.0 the 24-hour coding hackathon.
+Get ready to sharpen your coding skills, face mind-bending challenges, and gear up for IEEEXtreme 20.0 the 24-hour coding hackathon.
 
 👉 Explore the website and register now: https://roadtoxtreme.netlify.app/
 
@@ -274,9 +274,9 @@ This is your chance to level up, compete, and prove you’ve got what it takes. 
       status: "ongoing",
       image: CINEC_RoadToXtreme.image4,
       registrations: null,
-      hashtags: ['RoadToXtreme'  ,'IEEEXtreme19','CINECIEEE'],
+      hashtags: ['RoadToXtreme'  ,'IEEEXtreme20','CINECIEEE'],
       maxCapacity: null,
-      tags: ["RoadToXtreme", "IEEEXtreme19","CINECIEEE"],
+      tags: ["RoadToXtreme", "IEEEXtreme20","CINECIEEE"],
       branch: "CINEC",
       timeline: [],
     },
@@ -287,7 +287,7 @@ This is your chance to level up, compete, and prove you’ve got what it takes. 
       description: `
       🔥 Registration for Road to Xtreme 1.0 is officially OPEN!
 
-Your gateway to the global challenge of IEEEXtreme 19.0 starts here.
+Your gateway to the global challenge of IEEEXtreme 20.0 starts here.
 Form your team, unlock your potential, and rise above the competition.
 
 ⚡ Don’t just participate make your mark.
@@ -304,9 +304,9 @@ Form your team, unlock your potential, and rise above the competition.
       status: "ongoing",
       image: CINEC_RoadToXtreme.image3,
       registrations: null,
-      hashtags: ['RoadToXtreme'  ,'IEEEXtreme19','CINECIEEE'],
+      hashtags: ['RoadToXtreme'  ,'IEEEXtreme20','CINECIEEE'],
       maxCapacity: null,
-      tags: ["RoadToXtreme", "IEEEXtreme19","CINECIEEE"],
+      tags: ["RoadToXtreme", "IEEEXtreme20","CINECIEEE"],
       branch: "CINEC",
       timeline: [],
     },
@@ -319,11 +319,11 @@ Form your team, unlock your potential, and rise above the competition.
       🚀 Awareness Session – NIBM Galle 🚀
 
       Get ready to power up your coding journey! ⚡
-      Join us for the Awareness Session at NIBM Galle and learn everything you need to know to gear up for NIBMCodeX 1.0 - IEEEXtreme 19.0.
+      Join us for the Awareness Session at NIBM Galle and learn everything you need to know to gear up for NIBMCodeX 1.0 - IEEEXtreme 20.0.
 
 
       ✨ Be CodeX Ready, Be Future Ready.
-      Don’t miss out on this chance to get a head start and shine at NIBMCodeX 1.0 - IEEEXtreme 19.0! 💡
+      Don’t miss out on this chance to get a head start and shine at NIBMCodeX 1.0 - IEEEXtreme 20.0! 💡
 
 
 
@@ -342,7 +342,7 @@ Form your team, unlock your potential, and rise above the competition.
       status: "upcoming",
       image: NIBM_Codex.image8,
       registrations: null,
-      hashtags: ['PreXtreme' ,'IEEEXtreme 19_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
+      hashtags: ['PreXtreme' ,'IEEEXtreme 20_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
       maxCapacity: null,
       tags: ["NIBMCodeX 1_0 ", "PreXtreme","NIBM"],
       branch: "NIBM",
@@ -358,10 +358,10 @@ Form your team, unlock your potential, and rise above the competition.
       🚀 Awareness Session – NIBM Matara 🚀
 
       Get ready to power up your coding journey! ⚡
-      Join us for the Awareness Session at NIBM Matara and learn everything you need to know to gear up for NIBMCodeX 1.0 - IEEEXtreme 19.0.
+      Join us for the Awareness Session at NIBM Matara and learn everything you need to know to gear up for NIBMCodeX 1.0 - IEEEXtreme 20.0.
 
       ✨ Be CodeX Ready, Be Future Ready.
-      Don’t miss out on this chance to get a head start and shine at NIBMCodeX 1.0 - IEEEXtreme 19.0! 💡
+      Don’t miss out on this chance to get a head start and shine at NIBMCodeX 1.0 - IEEEXtreme 20.0! 💡
 
 
  `,
@@ -379,7 +379,7 @@ Form your team, unlock your potential, and rise above the competition.
       status: "upcoming",
       image: NIBM_Codex.image7,
       registrations: null,
-      hashtags: ['PreXtreme' ,'IEEEXtreme 19_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
+      hashtags: ['PreXtreme' ,'IEEEXtreme 20_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
       maxCapacity: null,
       tags: ["NIBMCodeX 1_0 ", "PreXtreme","NIBM"],
       branch: "NIBM",
@@ -394,7 +394,7 @@ Form your team, unlock your potential, and rise above the competition.
       description: `
       ⏳ IT’S CLOSER THAN YOU THINK!
 
-        The countdown is on… NIBMCodeX 1.0 – the 24-hour hackathon aligned with IEEEXtreme 19.0 – is almost here! 🚀
+        The countdown is on… NIBMCodeX 1.0 – the 24-hour hackathon aligned with IEEEXtreme 20.0 – is almost here! 🚀
 
         🎯 Fourth stop: Galle Awareness Session
 
@@ -420,7 +420,7 @@ Form your team, unlock your potential, and rise above the competition.
       status: "upcoming",
       image: NIBM_Codex.image6,
       registrations: null,
-      hashtags: ['PreXtreme' ,'IEEEXtreme 19_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
+      hashtags: ['PreXtreme' ,'IEEEXtreme 20_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
       maxCapacity: null,
       tags: ["NIBMCodeX 1_0 ", "PreXtreme","NIBM"],
       branch: "NIBM",
@@ -434,7 +434,7 @@ Form your team, unlock your potential, and rise above the competition.
       description: `
       ⏳ IT’S CLOSER THAN YOU THINK!
 
-          The countdown is on… NIBMCodeX 1.0 – the 24-hour hackathon aligned with IEEEXtreme 19.0 – is almost here! 🚀
+          The countdown is on… NIBMCodeX 1.0 – the 24-hour hackathon aligned with IEEEXtreme 20.0 – is almost here! 🚀
 
           🎯 Third stop: Matara Awareness Session
 
@@ -460,7 +460,7 @@ Form your team, unlock your potential, and rise above the competition.
       status: "upcoming",
       image: NIBM_Codex.image5,
       registrations: null,
-      hashtags: ['PreXtreme' ,'IEEEXtreme 19_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
+      hashtags: ['PreXtreme' ,'IEEEXtreme 20_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
       maxCapacity: null,
       tags: ["NIBMCodeX 1_0 ", "PreXtreme","NIBM"],
       branch: "NIBM",
@@ -511,7 +511,7 @@ Form your team, unlock your potential, and rise above the competition.
       description: `
       🚀 𝗝𝗼𝗶𝗻 𝘁𝗵𝗲 𝗰𝗼𝗱𝗲 𝗰𝗵𝗮𝗹𝗹𝗲𝗻𝗴𝗲!
 
-      𝗣𝗿𝗲𝗫𝘁𝗿𝗲𝗺𝗲 - is here to gear you up for the global coding marathon 𝗜𝗘𝗘𝗘𝗫𝘁𝗿𝗲𝗺𝗲 19.0 💻🔥
+      𝗣𝗿𝗲𝗫𝘁𝗿𝗲𝗺𝗲 - is here to gear you up for the global coding marathon 𝗜𝗘𝗘𝗘𝗫𝘁𝗿𝗲𝗺𝗲 20.0 💻🔥
 
       This 6-hour mini IEEEXtreme event begins at 00:00 GMT and ends at 17:59 on 21st September.
       Registered individuals and teams can attempt to solve coding challenges within a 6-hour time limit.
@@ -540,7 +540,7 @@ Form your team, unlock your potential, and rise above the competition.
       status: "upcoming",
       image: NIBM_Codex.image4,
       registrations: null,
-      hashtags: ['PreXtreme' ,'IEEEXtreme 19_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
+      hashtags: ['PreXtreme' ,'IEEEXtreme 20_0' ,'NIBMCodeX 1_0 ','NIBM' ,'IEEE'],
       maxCapacity: null,
       tags: ["NIBMCodeX 1_0 ", "PreXtreme","NIBM"],
       branch: "NIBM",
@@ -554,11 +554,11 @@ Form your team, unlock your potential, and rise above the competition.
       🚀 Awareness Session – NIBM Kandy 🚀
 
       Get ready to power up your coding journey! ⚡
-      Join us for the Awareness Session at NIBM Kandy and learn everything you need to know to gear up for NIBMCodeX 1.0 - IEEEXtreme 19.0.
+      Join us for the Awareness Session at NIBM Kandy and learn everything you need to know to gear up for NIBMCodeX 1.0 - IEEEXtreme 20.0.
 
 
       ✨ Be CodeX Ready, Be Future Ready.
-      Don’t miss out on this chance to get a head start and shine at NIBMCodeX 19.0 - IEEEXtreme 19.0 ! 💡
+      Don’t miss out on this chance to get a head start and shine at NIBMCodeX 19.0 - IEEEXtreme 20.0 ! 💡
 
  `,
       buttontext: "Join NIBM Whatsapp",
@@ -575,7 +575,7 @@ Form your team, unlock your potential, and rise above the competition.
       status: "upcoming",
       image: NIBM_Codex.image3,
       registrations: null,
-      hashtags: ["NIBMCodeX 1_0","IEEEXtreme19","Kandy ","CodeXReady"],
+      hashtags: ["NIBMCodeX 1_0","IEEEXtreme20","Kandy ","CodeXReady"],
       maxCapacity: null,
       tags: ["CodeXReady ", "AwarenessSession"],
       branch: "NIBM",
@@ -590,11 +590,11 @@ Form your team, unlock your potential, and rise above the competition.
       🚀 Awareness Session – NIBM Kurunegala 🚀
 
       Get ready to power up your coding journey! ⚡
-      Join us for the Awareness Session at NIBM Kurunegala and learn everything you need to know to gear up for NIBMCodeX 1.0 - IEEEXtreme 19.0.
+      Join us for the Awareness Session at NIBM Kurunegala and learn everything you need to know to gear up for NIBMCodeX 1.0 - IEEEXtreme 20.0.
       
 
       ✨ Be CodeX Ready, Be Future Ready.
-      Don’t miss out on this chance to get a head start and shine at NIBMCodeX 19.0 - IEEEXtreme 19.0 ! 💡
+      Don’t miss out on this chance to get a head start and shine at NIBMCodeX 19.0 - IEEEXtreme 20.0 ! 💡
 
  `,
       buttontext: "Join NIBM Whatsapp",
@@ -611,7 +611,7 @@ Form your team, unlock your potential, and rise above the competition.
       status: "upcoming",
       image: NIBM_Codex.image2,
       registrations: null,
-      hashtags: ["NIBMCodeX 1_0","IEEEXtreme19","Kurunegala","CodeXReady"],
+      hashtags: ["NIBMCodeX 1_0","IEEEXtreme20","Kurunegala","CodeXReady"],
       maxCapacity: null,
       tags: ["CodeXReady ", "AwarenessSession"],
       branch: "NIBM",
@@ -634,7 +634,7 @@ Form your team, unlock your potential, and rise above the competition.
       status: "upcoming",
       image: CINEC_RoadToXtreme.image2,
       registrations: null,
-      hashtags: ["RoadToXtreme1","IEEEXtreme19","CINECIEEE"],
+      hashtags: ["RoadToXtreme1","IEEEXtreme20","CINECIEEE"],
       maxCapacity: null,
       tags: ["RoadToXtreme1", "ProgrammingCompetition"],
       branch: "CINEC",
@@ -670,9 +670,9 @@ Imesh: 070 356 4926
       status: "ongoing",
       image: KelaniXtreme_CS.image2,
       registrations: null,
-      hashtags: ['KelaniXtreme','ProgrammingCompetition','IEEE','IEEEUOK','IEEEXtreme19','UOK'],
+      hashtags: ['KelaniXtreme','ProgrammingCompetition','IEEE','IEEEUOK','IEEEXtreme20','UOK'],
       maxCapacity: null,
-      tags: ["ProgrammingCompetition",'IEEEXtreme19'],
+      tags: ["ProgrammingCompetition",'IEEEXtreme20'],
       branch: "UOK",
       timeline: [],
     },
@@ -753,7 +753,7 @@ Caption By : Sonali Manjula
       status: "upcoming",
       image: CINEC_RoadToXtreme.image1,
       registrations: null,
-      hashtags: ["RoadToXtreme_1.0","IEEEXtreme_19.0","CINECIEEE","IEEESB"],
+      hashtags: ["RoadToXtreme_1.0","IEEEXtreme_20.0","CINECIEEE","IEEESB"],
       maxCapacity: null,
       tags: ["RoadToXtreme_1.0", "ProgrammingCompetition"],
       branch: "CINEC",
@@ -869,9 +869,9 @@ Will you rise or fall in the shadows?
       status: "ongoing",
       image: GreenXtreme_CD.image1,
       registrations: null,
-      hashtags: ["IEEE","IEEENSBM","CSNSBM ","WIENSBM ","IEEEXtreme ","IEEEXtreme19.0","GREENXTREME"],
+      hashtags: ["IEEE","IEEENSBM","CSNSBM ","WIENSBM ","IEEEXtreme ","IEEEXtreme20.0","GREENXTREME"],
       maxCapacity: null,
-      tags: ["GREENXTREME", "IEEEXtreme19.0"],
+      tags: ["GREENXTREME", "IEEEXtreme20.0"],
       branch: "NSBM",
       timeline: [],
     },
@@ -904,9 +904,9 @@ Will you rise or fall in the shadows?
       status: "ongoing",
       image: NIBM_Codex.image1,
       registrations: null,
-      hashtags: ["IEEE","NIBM ","NIBMCodeX1_0 ","Registration ","IEEEXtreme19.0"],
+      hashtags: ["IEEE","NIBM ","NIBMCodeX1_0 ","Registration ","IEEEXtreme20.0"],
       maxCapacity: null,
-      tags: ["NIBMCodeX1_0", "IEEEXtreme19.0"],
+      tags: ["NIBMCodeX1_0", "IEEEXtreme20.0"],
       branch: "NIBM",
       timeline: [],
     },
@@ -918,7 +918,7 @@ Will you rise or fall in the shadows?
       description: `
       🏆 Step Into GREENXTREME - Chapter One Awaits! 🏆
 
-Gear up for the ultimate 24-hour coding challenge of IEEEXtreme 19.0 with our very first workshop! 🚀
+Gear up for the ultimate 24-hour coding challenge of IEEEXtreme 20.0 with our very first workshop! 🚀
 
 In this session, you’ll:
 ✅ Explore past IEEEXtreme questions
@@ -936,9 +936,9 @@ This isn’t just preparation. It’s your next step toward coding greatness! �
       status: "ongoing",
       image: GreenXtreme_WS.image1,
       registrations: null,
-      hashtags: ["IEEE","IEEENSBM","CSNSBM ","WIENSBM ","IEEEXtreme ","IEEEXtreme19.0","GREENXTREME"],
+      hashtags: ["IEEE","IEEENSBM","CSNSBM ","WIENSBM ","IEEEXtreme ","IEEEXtreme20.0","GREENXTREME"],
       maxCapacity: null,
-      tags: ["GREENXTREME", "IEEEXtreme19.0"],
+      tags: ["GREENXTREME", "IEEEXtreme20.0"],
       branch: "NSBM",
       timeline: [],
     },

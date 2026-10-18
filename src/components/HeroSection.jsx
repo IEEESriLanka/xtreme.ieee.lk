@@ -116,7 +116,7 @@ export const HeroSection = () => {
                 mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}>
                 <span className="inline-block hover:text-blue-600 transition-colors duration-300 cursor-default">
-                  {"IEEEXtreme 19.0".split("").map((char, index) => (
+                  {"IEEEXtreme 20.0".split("").map((char, index) => (
                     <span
                       key={index}
                       className={`inline-block transition-all duration-500 hover:-translate-y-1 hover:text-blue-600 ${
@@ -182,7 +182,7 @@ export const HeroSection = () => {
                   
                   <img
                     src={logos.ieeextremelogo}
-                    alt="IEEEXtreme Programming Competition 18.0 - IEEE Sri Lanka Section"
+                    alt="IEEEXtreme Programming Competition 20.0 - IEEE Sri Lanka Section"
                     className="w-full h-auto filter drop-shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:drop-shadow-[0_0_30px_rgba(59,130,246,0.3)] relative z-10"
                   />
                   

@@ -299,14 +299,14 @@ const Events = ({ onEventSelect }) => {
               onClick={() => handleEventClick(event)}
             >
               {/* Event Image/Header */}
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative aspect-square overflow-hidden bg-white">
                 {event.image ? (
                   <>
                     {/* Event Image */}
                     <img
                       src={event.image}
                       alt={event.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-contain"
                     />
                     {/* Subtle overlay for poster-style images */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

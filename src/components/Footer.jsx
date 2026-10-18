@@ -144,13 +144,13 @@ const Footer = ({ onNavClick }) => {
 
         {/* Description */}
         <p className="max-w-md mx-auto text-center text-sm leading-relaxed mb-4 sm:mb-6 px-4 sm:px-0">
-          IEEEXtreme 19.0 is the global 24-hour programming competition
+          IEEEXtreme 20.0 is the global 24-hour programming competition
           organized by IEEE, scheduled for 25 October 2025.
         </p>
 
         {/* Copyright */}
         <p className="text-xs text-center text-gray-400 mb-2 px-2">
-          © IEEEXtreme 19.0 (Sri Lanka Section)
+          © IEEEXtreme 20.0 (Sri Lanka Section)
         </p>
 
         {/* Credits */}
